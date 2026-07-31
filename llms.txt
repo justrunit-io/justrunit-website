@@ -1,0 +1,26 @@
+# Just Run It
+
+> Enterprise workload automation control plane: jobs, workflows, schedules, federated agents, and workspaces.
+
+- Site: https://justrunit.io/
+- License contact: justrunit.io@gmail.com
+- Phone: 318-232-2280 (leave a message; we will call back)
+- Product GitHub (platform): https://github.com/justrunit-io/automation-platform
+- Website source: https://github.com/justrunit-io/justrunit-website
+
+## Key capabilities
+
+- Job types: COMMAND (shell), HTTP, NOOP, GIT_RELEASE
+- Workflows with conditions and restart from failed step
+- Cron schedules for jobs or workflows
+- Out-of-process agents on Linux and Windows (pull model)
+- Personal, group, and platform workspaces
+- Local RBAC (VIEWER / OPERATOR / ADMIN) and optional OIDC SSO
+- Deploy: JAR, Docker Compose, Helm/Kubernetes, Synology
+
+## Public materials
+
+- https://justrunit.io/downloads/JustRunIt-Product-Overview.html
+- https://justrunit.io/downloads/JustRunIt-Capabilities-By-Role.html
+- https://justrunit.io/downloads/JustRunIt-User-Guide.pdf
+- https://justrunit.io/downloads/JustRunIt-Agents-Guide.md

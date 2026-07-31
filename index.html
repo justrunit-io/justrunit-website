@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Just Run It — Workload Automation Software | Jobs, Workflows, Federated Agents</title>
+  <meta name="description" content="Just Run It is enterprise workload automation software: define jobs and workflows, run them on federated Linux/Windows agents, schedule with cron, and govern teams with workspaces. License: justrunit.io@gmail.com · 318-232-2280." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="author" content="Just Run It" />
+  <meta name="theme-color" content="#1e293b" />
+  <meta name="keywords" content="workload automation, job scheduler, federated agents, workflow automation, enterprise automation, Docker automation, Kubernetes scheduler, Just Run It" />
+  <link rel="canonical" href="https://justrunit.io/" />
+  <link rel="sitemap" type="application/xml" href="https://justrunit.io/sitemap.xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://justrunit.io/" />
+  <meta property="og:title" content="Just Run It — Enterprise Workload Automation" />
+  <meta property="og:description" content="Define work. Run it where files live. Federated agents and workspaces for modern workload automation." />
+  <meta property="og:image" content="https://justrunit.io/assets/images/10-dashboard-medium.png" />
+  <meta property="og:image:width" content="1800" />
+  <meta property="og:image:height" content="1896" />
+  <meta property="og:image:alt" content="Just Run It operations dashboard in medium theme" />
+  <meta property="og:site_name" content="Just Run It" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Just Run It — Enterprise Workload Automation" />
+  <meta name="twitter:description" content="Define work. Run it where files live. Federated agents and workspaces." />
+  <meta name="twitter:image" content="https://justrunit.io/assets/images/10-dashboard-medium.png" />
+  <meta name="twitter:image:alt" content="Just Run It operations dashboard" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260730c" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2360a5fa'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='12' font-family='sans-serif' font-weight='700' fill='%230f172a'%3EJR%3C/text%3E%3C/svg%3E" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://justrunit.io/#website",
+        "url": "https://justrunit.io/",
+        "name": "Just Run It",
+        "description": "Enterprise workload automation control plane with federated agents and workspaces.",
+        "publisher": { "@id": "https://justrunit.io/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://justrunit.io/#organization",
+        "name": "Just Run It",
+        "url": "https://justrunit.io/",
+        "email": "justrunit.io@gmail.com",
+        "telephone": "+1-318-232-2280",
+        "logo": "https://justrunit.io/assets/images/10-dashboard-medium.png"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Just Run It",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Linux, Windows, Docker, Kubernetes",
+        "url": "https://justrunit.io/",
+        "description": "Web-based workload automation: jobs, workflows, cron schedules, out-of-process agents, personal and group workspaces, RBAC and optional OIDC SSO.",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/OnlineOnly",
+          "url": "https://justrunit.io/#contact",
+          "description": "Commercial licensing — contact for information"
+        },
+        "featureList": [
+          "COMMAND shell jobs",
+          "Workflows with conditions and restart",
+          "Cron schedules",
+          "Federated Linux and Windows agents",
+          "Personal and group workspaces",
+          "Docker Compose and Helm deployment",
+          "Local RBAC and OIDC SSO"
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <span class="brand-mark">JR</span>
+        Just Run It
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open menu">Menu</button>
+      <ul class="nav-links">
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#roles">By role</a></li>
+        <li><a href="#agents">Agents</a></li>
+        <li><a href="#workspaces">Workspaces</a></li>
+        <li><a href="#deploy">Deploy</a></li>
+        <li><a href="#downloads">Downloads</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#gallery">Screenshots</a></li>
+        <li><a class="btn btn-primary btn-sm" href="#contact">License &amp; contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Enterprise workload automation</p>
+          <h1>Define work. <span>Run it where files live.</span> Observe and secure.</h1>
+          <p class="lead">
+            Just Run It is a web-based control plane for jobs, workflows, and schedules—
+            with agents you install on the systems that actually run your scripts and binaries.
+            Personal and group workspaces support federated teams on one shared platform.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Request licensing information</a>
+            <a class="btn btn-secondary" href="#downloads">Download product materials</a>
+          </div>
+          <div class="hero-meta">
+            <span><strong>Control plane</strong> UI + REST API</span>
+            <span><strong>Agents</strong> Linux, Windows, containers</span>
+            <span><strong>Deploy</strong> Docker, Kubernetes, bare metal</span>
+          </div>
+        </div>
+        <figure class="hero-shot">
+          <img
+            src="assets/images/10-dashboard-medium.png"
+            srcset="assets/images/full/10-dashboard-medium.png 1800w"
+            sizes="(min-width: 900px) 48vw, 100vw"
+            width="1800"
+            height="1896"
+            alt="Just Run It operations dashboard showing job counts, agents, and recent executions in medium theme"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section id="capabilities" class="band">
+      <div class="container">
+        <div class="section-head">
+          <h2>What the product offers</h2>
+          <p>A complete offering for script- and binary-centric automation—without forcing every workload into a single host.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="tag">Define</span>
+            <h3>Jobs, workflows &amp; schedules</h3>
+            <ul>
+              <li>Job types: shell <strong>COMMAND</strong>, HTTP, NOOP, <strong>GIT_RELEASE</strong> (download release assets and execute)</li>
+              <li>Workflows with ordered steps, conditions, and restart from a failed step</li>
+              <li>Cron schedules targeting a job or a workflow</li>
+              <li>Search, filter, and paging across catalogs and history</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="tag">Execute</span>
+            <h3>Agents where work runs</h3>
+            <ul>
+              <li>Out-of-process agents claim work from the control plane</li>
+              <li>Same agent JAR on Linux and Windows</li>
+              <li>Preferred agent pinning for host-specific scripts</li>
+              <li>Cancel / kill, retries, and orphan recovery when an agent is lost mid-run</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="tag">Govern</span>
+            <h3>Security &amp; workspaces</h3>
+            <ul>
+              <li>Local users with VIEWER / OPERATOR / ADMIN roles</li>
+              <li>Optional OIDC SSO (Entra ID, Okta, Keycloak, and similar)</li>
+              <li>Personal, group, and platform workspaces for federated teams</li>
+              <li>Audit trail with actor attribution</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roles">
+      <div class="container">
+        <div class="section-head">
+          <h2>Capabilities by role</h2>
+          <p>What users, administrators, and systems operators can do day to day.</p>
+        </div>
+        <div class="role-tabs" role="tablist">
+          <button type="button" class="role-tab active" data-role="user">Application user / operator</button>
+          <button type="button" class="role-tab" data-role="admin">Administrator</button>
+          <button type="button" class="role-tab" data-role="sysop">Systems operator</button>
+        </div>
+
+        <div id="role-user" class="role-panel active">
+          <table class="cap-table">
+            <thead>
+              <tr><th>Area</th><th>Capability</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Catalog</td><td>Browse jobs, workflows, and schedules in workspaces you can see (personal, groups, platform shared)</td></tr>
+              <tr><td>Run</td><td>Run now for jobs and workflows (OPERATOR+); view execution status and logs</td></tr>
+              <tr><td>Create</td><td>Create and edit jobs, workflows, and schedules in workspaces you manage (personal ownership or group manager)</td></tr>
+              <tr><td>Schedules</td><td>Attach cron expressions; human-readable schedule descriptions in the UI</td></tr>
+              <tr><td>History</td><td>Search and filter executions; open detail with error reason and log output; filter failed runs</td></tr>
+              <tr><td>Recovery</td><td>Cancel queued/running work; requeue orphaned executions after agent loss (where permitted)</td></tr>
+              <tr><td>Workspace filter</td><td>Sidebar switcher focuses lists and dashboards on a selected workspace</td></tr>
+              <tr><td>Themes</td><td>Dark, medium, and light UI themes</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="role-admin" class="role-panel">
+          <table class="cap-table">
+            <thead>
+              <tr><th>Area</th><th>Capability</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Full visibility</td><td>See and manage definitions and executions across all workspaces</td></tr>
+              <tr><td>Users</td><td>Admin user management: create, enable/disable, roles, password reset, delete</td></tr>
+              <tr><td>Groups</td><td>Create group workspaces; add and remove members (OWNER / MANAGER / MEMBER)</td></tr>
+              <tr><td>Platform workspace</td><td>Maintain company-shared job definitions visible to authenticated users</td></tr>
+              <tr><td>Security modes</td><td>Local accounts, hybrid, or OIDC-primary SSO with role mapping from the identity provider</td></tr>
+              <tr><td>Agents</td><td>Register, monitor, and remove agents; align naming for preferred-agent targeting</td></tr>
+              <tr><td>API</td><td>Full REST surface for automation, CI, and integration</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div id="role-sysop" class="role-panel">
+          <table class="cap-table">
+            <thead>
+              <tr><th>Area</th><th>Capability</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Topology</td><td>Stateless application nodes, PostgreSQL as system of record, optional HA (multi-node + DB lease for scheduler)</td></tr>
+              <tr><td>Execution modes</td><td><code>local</code> (server runs jobs) or <code>agent</code> (workers claim work)—production typically agent mode</td></tr>
+              <tr><td>Containers</td><td>Docker Compose stack (Postgres + app nodes + agents); multi-stage images built from source</td></tr>
+              <tr><td>Kubernetes</td><td>Helm chart for server HA, agents, and optional in-cluster Postgres</td></tr>
+              <tr><td>Appliance / NAS</td><td>Synology Container Manager package under deploy/synology</td></tr>
+              <tr><td>Health</td><td>Spring Actuator health, readiness, metrics, Prometheus endpoint</td></tr>
+              <tr><td>Notifications</td><td>Optional email on failure (and optional success) via SMTP</td></tr>
+              <tr><td>Artifacts</td><td>Configurable cache directory for GIT_RELEASE downloads on server or agent hosts</td></tr>
+              <tr><td>Observability</td><td>Dashboard counts, audit events, execution diagnostics for ops triage</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="agents" class="band">
+      <div class="container">
+        <div class="section-head">
+          <h2>Agent flexibility</h2>
+          <p>Run automation on the hosts that hold your applications, data, and scripts—across teams and data centers.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>How agents work</h3>
+            <ul>
+              <li><strong>Pull model</strong> — agents open outbound HTTPS to the control plane; the server does not need to dial agent hosts</li>
+              <li><strong>Identity by name</strong> — register, heartbeat, and claim use a unique agent name</li>
+              <li><strong>Hostname is a label</strong> — optional display metadata for operators; not used for routing</li>
+              <li><strong>Preferred agent</strong> on a job pins work to a named agent (the host that has your files)</li>
+              <li><strong>Linux &amp; Windows</strong> — same agent package; shell via <code>/bin/sh</code> or <code>cmd.exe</code></li>
+              <li><strong>Scale-out</strong> — run multiple agent processes for parallel capacity</li>
+            </ul>
+            <p style="margin-top:0.85rem;color:var(--muted);font-size:0.9rem">
+              Full detail: <a href="downloads/JustRunIt-Agents-Guide.md">Agents guide (download)</a>
+            </p>
+          </article>
+          <article class="card">
+            <h3>Federated agent placement</h3>
+            <ul>
+              <li>Install agents on app servers, batch hosts, jump boxes, or containers next to workloads</li>
+              <li>EU / US / LOB teams keep code and secrets on their systems while sharing one control plane</li>
+              <li>COMMAND jobs invoke existing start/status/stop scripts already installed on the agent host</li>
+              <li>GIT_RELEASE jobs can pull versioned binaries onto the agent and execute them</li>
+              <li>Orphan detection marks work when an agent goes offline mid-run; operators cancel or requeue</li>
+            </ul>
+            <figure class="hero-shot" style="margin-top:1rem">
+              <img src="assets/images/06-agents.png" srcset="assets/images/full/06-agents.png 1800w" width="1800" height="1125" alt="Agents management screen with registered workers and capacity" loading="lazy" decoding="async" />
+            </figure>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="workspaces">
+      <div class="container">
+        <div class="section-head">
+          <h2>Workspaces for federated teams</h2>
+          <p>One control plane; clear boundaries for who sees and manages which automation.</p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="tag">Personal</span>
+            <h3>Private by default</h3>
+            <p>Each user receives a personal workspace. Operators create and schedule their own jobs without cluttering a global catalog.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Group</span>
+            <h3>Team collaboration</h3>
+            <p>Administrators create group workspaces and assign members as OWNER, MANAGER, or MEMBER. Shared pipelines stay with the team that owns them.</p>
+          </article>
+          <article class="card">
+            <span class="tag">Platform</span>
+            <h3>Company shared</h3>
+            <p>A platform workspace holds common definitions visible to authenticated users, with administrative control over edits.</p>
+          </article>
+        </div>
+        <div class="card" style="margin-top:1rem">
+          <h3>Why this matters for federation</h3>
+          <ul>
+            <li><strong>Control plane federation</strong> — multiple teams use one HA deployment instead of shadow schedulers</li>
+            <li><strong>Agent federation</strong> — agents remain on team-owned systems; preferred agent binds a job to the right host</li>
+            <li><strong>Least privilege of view</strong> — non-admins only see workspaces they belong to; admins retain full oversight</li>
+            <li><strong>Same-workspace integrity</strong> — workflow steps and schedules must reference jobs in the same workspace</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="deploy" class="band">
+      <div class="container">
+        <div class="section-head">
+          <h2>Deployment options &amp; environments</h2>
+          <p>From lab laptop to multi-node production—same product family.</p>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Supported deployment models</h3>
+            <ul>
+              <li><strong>Local JAR</strong> — single process with embedded H2 for evaluation</li>
+              <li><strong>Docker Compose</strong> — PostgreSQL, dual app nodes, dual agents (recommended lab / small prod)</li>
+              <li><strong>Kubernetes / AKS</strong> — Helm chart for server, agents, optional Postgres</li>
+              <li><strong>Synology Container Manager</strong> — packaged compose for NAS environments</li>
+              <li><strong>Bare metal / VM</strong> — Java 21 runtime; agent JAR on any JVM host</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Java 21</span>
+              <span class="chip">Spring Boot</span>
+              <span class="chip">PostgreSQL 16</span>
+              <span class="chip">Docker</span>
+              <span class="chip">Helm</span>
+              <span class="chip">OIDC ready</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Reference architecture</h3>
+            <pre class="arch">UI / API  ──►  App node  ·  App node   (N replicas)
+                     │           │
+                     └──── shared DB ────┘
+                            │
+                       PostgreSQL
+                            ▲
+              Agents ───────┘  (claim work / report status)</pre>
+            <p style="margin-top:0.85rem">
+              Environments typically separate <strong>lab</strong>, <strong>pre-production</strong>, and <strong>production</strong> control planes,
+              with agents co-located to each environment’s application estate.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="downloads" class="band">
+      <div class="container">
+        <div class="section-head">
+          <h2>Downloads</h2>
+          <p>Public product materials for evaluation and licensing discussions. Internal engineering notes are not published here.</p>
+        </div>
+        <div class="download-list">
+          <div class="download-item">
+            <div>
+              <h3>User Guide (PDF)</h3>
+              <p>Capabilities, UI walkthrough with screenshots, technologies, and deployment models.</p>
+            </div>
+            <a class="btn btn-secondary btn-sm" href="downloads/JustRunIt-User-Guide.pdf" download>Download PDF</a>
+          </div>
+          <div class="download-item">
+            <div>
+              <h3>Product overview (HTML)</h3>
+              <p>Offering summary: features, roles, agents, workspaces, and deployment options.</p>
+            </div>
+            <a class="btn btn-secondary btn-sm" href="downloads/JustRunIt-Product-Overview.html" download>Download HTML</a>
+          </div>
+          <div class="download-item">
+            <div>
+              <h3>Agents guide</h3>
+              <p>Registration, name vs hostname, preferred agent, and federated placement.</p>
+            </div>
+            <a class="btn btn-secondary btn-sm" href="downloads/JustRunIt-Agents-Guide.md" download>Download Markdown</a>
+          </div>
+          <div class="download-item">
+            <div>
+              <h3>Capabilities by role (HTML)</h3>
+              <p>User, administrator, and systems operator capability lists for RFP-style review.</p>
+            </div>
+            <a class="btn btn-secondary btn-sm" href="downloads/JustRunIt-Capabilities-By-Role.html" download>Download HTML</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-box">
+        <div class="contact-card">
+          <p class="eyebrow">Licensing &amp; information</p>
+          <h3>Talk to us about licensing Just Run It</h3>
+          <p>
+            For commercial licensing, evaluation access, or architecture discussions,
+            email us. We respond with next steps for your environment and use case.
+          </p>
+          <p style="margin:0 0 0.35rem;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)">Email</p>
+          <a class="email-link" href="mailto:justrunit.io@gmail.com?subject=Just%20Run%20It%20licensing%20inquiry">
+            justrunit.io@gmail.com
+          </a>
+          <p style="margin:1.15rem 0 0.35rem;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)">Phone</p>
+          <a class="email-link" href="tel:+13182322280">318-232-2280</a>
+          <p class="note" style="margin-top:0.5rem">
+            Leave a message — we will call back to discuss your needs.
+          </p>
+          <p class="note">
+            Website: <a href="https://justrunit.io/">https://justrunit.io</a>
+          </p>
+          <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:0.65rem">
+            <a class="btn btn-primary" href="mailto:justrunit.io@gmail.com?subject=Just%20Run%20It%20licensing%20inquiry">Compose email</a>
+            <a class="btn btn-secondary" href="tel:+13182322280">Call 318-232-2280</a>
+          </div>
+        </div>
+        <div class="card">
+          <h3>What to include (optional)</h3>
+          <ul>
+            <li>Organization and primary use case</li>
+            <li>Approximate agent count / environments</li>
+            <li>Preferred deployment model (Docker, Kubernetes, on-prem)</li>
+            <li>Timeline for evaluation or production</li>
+          </ul>
+          <p style="margin-top:1rem;color:var(--muted);font-size:0.9rem">
+            Product: <strong style="color:var(--text)">Just Run It</strong><br />
+            Domain: <a href="https://justrunit.io/">justrunit.io</a><br />
+            Email: <a href="mailto:justrunit.io@gmail.com">justrunit.io@gmail.com</a><br />
+            Phone: <a href="tel:+13182322280">318-232-2280</a> (leave a message)<br />
+            Category: Enterprise workload automation control plane
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="band" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          <p>Short answers for evaluators and searchers.</p>
+        </div>
+        <div class="seo-faq">
+          <details>
+            <summary>What is Just Run It?</summary>
+            <p>Just Run It is enterprise workload automation software: a web control plane for jobs, workflows, and schedules, plus out-of-process agents that run work on Linux, Windows, or container hosts.</p>
+          </details>
+          <details>
+            <summary>Can teams run jobs on their own servers?</summary>
+            <p>Yes. Install agents on team-owned systems and pin jobs with preferred agent names. Workspaces keep personal and group catalogs separate on one shared control plane.</p>
+          </details>
+          <details>
+            <summary>How is it deployed?</summary>
+            <p>Local JAR for evaluation, Docker Compose for multi-node labs, Helm for Kubernetes, and a Synology package for NAS-style environments.</p>
+          </details>
+          <details>
+            <summary>How do I license Just Run It?</summary>
+            <p>Email <a href="mailto:justrunit.io@gmail.com">justrunit.io@gmail.com</a> or call <a href="tel:+13182322280">318-232-2280</a> and leave a message — we will call back to discuss your needs.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container-wide">
+        <div class="section-head">
+          <h2>Control plane screenshots</h2>
+          <p>
+            Full-width previews (1800px sources). Click to open native resolution, or use
+            <strong>Open full size</strong> for the original PNG without scaling.
+          </p>
+        </div>
+        <div class="gallery">
+          <figure class="shot">
+            <a class="shot-frame" href="assets/images/full/10-dashboard-medium.png" data-full="assets/images/full/10-dashboard-medium.png">
+              <img src="assets/images/10-dashboard-medium.png" srcset="assets/images/full/10-dashboard-medium.png 1800w" width="1800" height="1896" alt="Operations dashboard in medium theme with execution counts and agent status" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <div class="cap-text"><strong>Operations dashboard</strong> Counts, agents, recent executions, and audit (medium theme).</div>
+              <div class="shot-actions">
+                <a class="btn btn-secondary btn-sm" href="assets/images/full/10-dashboard-medium.png" target="_blank" rel="noopener">Open full size</a>
+              </div>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot-frame" href="assets/images/full/01-login.png" data-full="assets/images/full/01-login.png">
+              <img src="assets/images/01-login.png" srcset="assets/images/full/01-login.png 1800w" width="1800" height="1125" alt="Just Run It sign-in page with local login" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <div class="cap-text"><strong>Sign-in</strong> Local authentication; optional SSO when OIDC is configured.</div>
+              <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/01-login.png" target="_blank" rel="noopener">Open full size</a></div>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot-frame" href="assets/images/full/03-jobs.png" data-full="assets/images/full/03-jobs.png">
+              <img src="assets/images/03-jobs.png" srcset="assets/images/full/03-jobs.png 1800w" width="1800" height="1270" alt="Jobs catalog with search filters and run actions" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <div class="cap-text"><strong>Jobs</strong> Catalog with search, type filters, run and schedule actions.</div>
+              <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/03-jobs.png" target="_blank" rel="noopener">Open full size</a></div>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot-frame" href="assets/images/full/12-job-edit.png" data-full="assets/images/full/12-job-edit.png">
+              <img src="assets/images/12-job-edit.png" srcset="assets/images/full/12-job-edit.png 1800w" width="1800" height="1205" alt="Job editor form for type payload preferred agent and timeouts" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <div class="cap-text"><strong>Job editor</strong> Type, payload, preferred agent, concurrency and timeout.</div>
+              <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/12-job-edit.png" target="_blank" rel="noopener">Open full size</a></div>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot-frame" href="assets/images/full/04-workflows.png" data-full="assets/images/full/04-workflows.png">
+              <img src="assets/images/04-workflows.png" srcset="assets/images/full/04-workflows.png 1800w" width="1800" height="1125" alt="Workflows list for multi-step job orchestration" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <div class="cap-text"><strong>Workflows</strong> Multi-step orchestration with conditions and restart.</div>
+              <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/04-workflows.png" target="_blank" rel="noopener">Open full size</a></div>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot-frame" href="assets/images/full/05-schedules.png" data-full="assets/images/full/05-schedules.png">
+              <img src="assets/images/05-schedules.png" srcset="assets/images/full/05-schedules.png 1800w" width="1800" height="1125" alt="Cron schedules list for jobs and workflows" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <div class="cap-text"><strong>Schedules</strong> Cron-driven job or workflow triggers.</div>
+              <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/05-schedules.png" target="_blank" rel="noopener">Open full size</a></div>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot-frame" href="assets/images/full/06-agents.png" data-full="assets/images/full/06-agents.png">
+              <img src="assets/images/06-agents.png" srcset="assets/images/full/06-agents.png 1800w" width="1800" height="1125" alt="Agents page showing registered workers hostnames and capacity" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <div class="cap-text"><strong>Agents</strong> Register, monitor, and pin preferred agents for federated hosts.</div>
+              <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/06-agents.png" target="_blank" rel="noopener">Open full size</a></div>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot-frame" href="assets/images/full/07-executions.png" data-full="assets/images/full/07-executions.png">
+              <img src="assets/images/07-executions.png" srcset="assets/images/full/07-executions.png 1800w" width="1800" height="2955" alt="Execution history with status filters and paging" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <div class="cap-text"><strong>Executions</strong> History, status filters, and drill-down.</div>
+              <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/07-executions.png" target="_blank" rel="noopener">Open full size</a></div>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot-frame" href="assets/images/full/13-execution-detail.png" data-full="assets/images/full/13-execution-detail.png">
+              <img src="assets/images/13-execution-detail.png" srcset="assets/images/full/13-execution-detail.png 1800w" width="1800" height="1189" alt="Execution detail page with error reason and log output" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <div class="cap-text"><strong>Execution detail</strong> Failure reason and log output for fast triage.</div>
+              <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/13-execution-detail.png" target="_blank" rel="noopener">Open full size</a></div>
+            </figcaption>
+          </figure>
+          <figure class="shot">
+            <a class="shot-frame" href="assets/images/full/08-users.png" data-full="assets/images/full/08-users.png">
+              <img src="assets/images/08-users.png" srcset="assets/images/full/08-users.png 1800w" width="1800" height="1539" alt="Admin user management with roles" loading="lazy" decoding="async" />
+            </a>
+            <figcaption>
+              <div class="cap-text"><strong>Users (admin)</strong> Local account and role administration.</div>
+              <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/08-users.png" target="_blank" rel="noopener">Open full size</a></div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container row">
+      <div>
+        <strong style="color:var(--text)">Just Run It</strong>
+        · <a href="https://justrunit.io/">justrunit.io</a>
+        · Workload automation · © <span id="year">2026</span>
+      </div>
+      <div>
+        <a href="mailto:justrunit.io@gmail.com">justrunit.io@gmail.com</a>
+        · <a href="tel:+13182322280">318-232-2280</a>
+        · <a href="#downloads">Downloads</a>
+        · <a href="#top">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot full resolution preview">
+    <div class="lightbox-toolbar">
+      <span id="lightbox-label">Full resolution preview</span>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <a id="lightbox-open-raw" href="#" target="_blank" rel="noopener">Open original PNG</a>
+        <button type="button" class="lightbox-close" aria-label="Close">×</button>
+      </div>
+    </div>
+    <div class="lightbox-stage">
+      <img src="" alt="" />
+    </div>
+  </div>
+
+  <script src="assets/js/main.js?v=20260730c"></script>
+</body>
+</html>

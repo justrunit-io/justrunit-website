@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Just Run It — Product Overview</title>
+  <style>
+    body { font-family: "Segoe UI", system-ui, sans-serif; max-width: 48rem; margin: 2rem auto; padding: 0 1.25rem 3rem; color: #0f172a; line-height: 1.5; }
+    h1 { font-size: 1.75rem; margin-bottom: 0.35rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.75rem; border-bottom: 2px solid #0f172a; padding-bottom: 0.25rem; }
+    .muted { color: #475569; }
+    .meta { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 0.85rem 1rem; margin: 1rem 0; font-size: 0.9rem; }
+    ul { margin: 0.4rem 0 0.8rem 1.2em; }
+    a { color: #1d4ed8; }
+    code { background: #f1f5f9; padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <p class="muted" style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;color:#1d4ed8">Just Run It · Product overview</p>
+  <h1>Enterprise workload automation control plane</h1>
+  <p class="muted">Define jobs and workflows, run them on federated agents where your files live, schedule execution, observe failures, and secure access with roles and workspaces.</p>
+  <div class="meta">
+    <strong>Website:</strong> <a href="https://justrunit.io/">https://justrunit.io</a><br />
+    <strong>Email:</strong>
+    <a href="mailto:justrunit.io@gmail.com">justrunit.io@gmail.com</a><br />
+    <strong>Phone:</strong> <a href="tel:+13182322280">318-232-2280</a>
+    — leave a message; we will call back to discuss your needs.
+  </div>
+
+  <h2>The offering</h2>
+  <ul>
+    <li>Web UI control plane and REST API</li>
+    <li>Jobs: COMMAND (shell), HTTP, NOOP, GIT_RELEASE (release asset download + execute)</li>
+    <li>Workflows with step conditions and restart from failed step</li>
+    <li>Cron schedules for jobs or workflows</li>
+    <li>Out-of-process agents (Linux, Windows, container hosts)</li>
+    <li>Personal, group, and platform workspaces for multi-team use</li>
+    <li>Local RBAC (VIEWER / OPERATOR / ADMIN) and optional OIDC SSO</li>
+    <li>Execution history, cancel/kill, orphan recovery, optional email notifications</li>
+    <li>Deploy via JAR, Docker Compose, Helm/Kubernetes, or Synology package</li>
+  </ul>
+
+  <h2>Federated use</h2>
+  <ul>
+    <li><strong>Control plane</strong> — one shared HA deployment for multiple teams</li>
+    <li><strong>Workspaces</strong> — personal and group isolation of catalogs; admin full visibility</li>
+    <li><strong>Agents</strong> — installed on team systems; preferred agent pins jobs to the right host</li>
+  </ul>
+
+  <h2>Technology baseline</h2>
+  <ul>
+    <li>Java 21, Spring Boot, Thymeleaf UI</li>
+    <li>PostgreSQL for production; H2 for local evaluation</li>
+    <li>Docker multi-stage builds; Helm chart for Kubernetes</li>
+  </ul>
+
+  <h2>Contact</h2>
+  <p>For commercial licensing or evaluation discussions:</p>
+  <ul>
+    <li>Email: <a href="mailto:justrunit.io@gmail.com">justrunit.io@gmail.com</a></li>
+    <li>Phone: <a href="tel:+13182322280">318-232-2280</a> — leave a message; we will call back to discuss your needs</li>
+    <li>Web: <a href="https://justrunit.io/">https://justrunit.io</a></li>
+  </ul>
+  <p class="muted" style="font-size:0.85rem;margin-top:2rem">© Just Run It. Public product materials only.</p>
+</body>
+</html>

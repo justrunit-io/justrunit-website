@@ -1,0 +1,21 @@
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# HTML: never serve a stale shell (Cloudflare + browser)
+/
+  Cache-Control: public, max-age=0, must-revalidate
+  CDN-Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+  CDN-Cache-Control: public, max-age=0, must-revalidate
+
+# Fingerprinted / versioned static assets can be cached longer
+/assets/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# Full-size screenshots are large; allow longer cache after versioned deploy
+/assets/images/*
+  Cache-Control: public, max-age=604800, immutable
