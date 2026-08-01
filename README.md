@@ -67,6 +67,8 @@ Then attach `justrunit.io` in the dashboard under that project’s **Custom doma
 
 | File | Purpose |
 |------|---------|
+| `downloads/JustRunIt-Security-Overview.pdf` | One-page security brief (public) |
+| `downloads/JustRunIt-Deployment-Architecture.pdf` | One-page architecture (API-only agents) |
 | `downloads/JustRunIt-User-Guide.pdf` | UI / capabilities walkthrough |
 | `downloads/JustRunIt-Product-Overview.pdf` | Offering summary |
 | `downloads/JustRunIt-Capabilities-By-Role.pdf` | User / admin / sysop lists |

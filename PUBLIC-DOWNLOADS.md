@@ -12,6 +12,7 @@ not internal gaps.
 - Agent operational model (name, hostname, preferred agent, pull claim)  
 - Production deployment options (Compose HA, Helm, bare metal; JAR for sandbox)  
 - Screenshots and product demo video  
+- Security overview and deployment architecture one-pagers (API-only agents)  
 - Commercial licensing contact  
 
 ## Exclude

@@ -28,6 +28,8 @@
 
 ## Public materials (PDF)
 
+- https://justrunit.io/downloads/JustRunIt-Security-Overview.pdf
+- https://justrunit.io/downloads/JustRunIt-Deployment-Architecture.pdf
 - https://justrunit.io/downloads/JustRunIt-User-Guide.pdf
 - https://justrunit.io/downloads/JustRunIt-Product-Overview.pdf
 - https://justrunit.io/downloads/JustRunIt-Agents-Guide.pdf
