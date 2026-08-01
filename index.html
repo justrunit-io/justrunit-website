@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Just Run It — Workload Automation Software | Jobs, Workflows, Federated Agents</title>
-  <meta name="description" content="Just Run It is enterprise workload automation software: define jobs and workflows, run them on federated Linux/Windows agents, schedule with cron, and govern teams with workspaces. License: justrunit.io@gmail.com · 318-232-2280." />
+  <title>Just Run It — Production Workload Automation | Jobs, Workflows, Federated Agents</title>
+  <meta name="description" content="Just Run It is production-ready enterprise workload automation: jobs, workflows, and cron schedules on federated Linux/Windows agents, with workspaces, RBAC, and OIDC. Commercial licensing available. justrunit.io@gmail.com · 318-232-2280." />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="author" content="Just Run It" />
   <meta name="theme-color" content="#1e293b" />
@@ -14,19 +14,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://justrunit.io/" />
-  <meta property="og:title" content="Just Run It — Enterprise Workload Automation" />
-  <meta property="og:description" content="Define work. Run it where files live. Federated agents and workspaces for modern workload automation." />
+  <meta property="og:title" content="Just Run It — Production Workload Automation" />
+  <meta property="og:description" content="Production-ready control plane: define work, run it where files live, schedule it, and govern teams. Commercial licenses available." />
   <meta property="og:image" content="https://justrunit.io/assets/images/10-dashboard-medium.png" />
   <meta property="og:image:width" content="1800" />
-  <meta property="og:image:height" content="1896" />
+  <meta property="og:image:height" content="1273" />
   <meta property="og:image:alt" content="Just Run It operations dashboard in medium theme" />
   <meta property="og:site_name" content="Just Run It" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Just Run It — Enterprise Workload Automation" />
-  <meta name="twitter:description" content="Define work. Run it where files live. Federated agents and workspaces." />
+  <meta name="twitter:title" content="Just Run It — Production Workload Automation" />
+  <meta name="twitter:description" content="Production-ready jobs, workflows, federated agents, and workspaces. Commercial licensing available." />
   <meta name="twitter:image" content="https://justrunit.io/assets/images/10-dashboard-medium.png" />
   <meta name="twitter:image:alt" content="Just Run It operations dashboard" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260731a" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260731b" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2360a5fa'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='12' font-family='sans-serif' font-weight='700' fill='%230f172a'%3EJR%3C/text%3E%3C/svg%3E" />
@@ -39,7 +39,7 @@
         "@id": "https://justrunit.io/#website",
         "url": "https://justrunit.io/",
         "name": "Just Run It",
-        "description": "Enterprise workload automation control plane with federated agents and workspaces.",
+        "description": "Production-ready enterprise workload automation with federated agents and workspaces.",
         "publisher": { "@id": "https://justrunit.io/#organization" }
       },
       {
@@ -57,21 +57,22 @@
         "applicationCategory": "BusinessApplication",
         "operatingSystem": "Linux, Windows, Docker, Kubernetes",
         "url": "https://justrunit.io/",
-        "description": "Web-based workload automation: jobs, workflows, cron schedules, out-of-process agents, personal and group workspaces, RBAC and optional OIDC SSO.",
+        "description": "Production-ready web workload automation: jobs, workflows, cron schedules, federated agents, workspaces, RBAC and OIDC SSO. Commercial licensing available.",
         "offers": {
           "@type": "Offer",
-          "availability": "https://schema.org/OnlineOnly",
+          "availability": "https://schema.org/InStock",
           "url": "https://justrunit.io/#contact",
-          "description": "Commercial licensing — contact for information"
+          "description": "Commercial production licensing — contact for quote and deployment planning"
         },
         "featureList": [
-          "COMMAND shell jobs",
+          "Production COMMAND shell jobs",
           "Workflows with conditions and restart",
           "Cron schedules",
           "Federated Linux and Windows agents",
           "Personal and group workspaces",
-          "Docker Compose and Helm deployment",
-          "Local RBAC and OIDC SSO"
+          "HA Docker Compose and Helm deployment",
+          "Local RBAC and OIDC SSO",
+          "Execution triage and orphan recovery"
         ]
       }
     ]
@@ -87,6 +88,7 @@
       </a>
       <button class="nav-toggle" type="button" aria-label="Open menu">Menu</button>
       <ul class="nav-links">
+        <li><a href="#why">Why Just Run It</a></li>
         <li><a href="#capabilities">Capabilities</a></li>
         <li><a href="#roles">By role</a></li>
         <li><a href="#agents">Agents</a></li>
@@ -96,7 +98,7 @@
         <li><a href="#downloads">Downloads</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#gallery">Screenshots</a></li>
-        <li><a class="btn btn-primary btn-sm" href="#contact">License &amp; contact</a></li>
+        <li><a class="btn btn-primary btn-sm" href="#contact">Buy / license</a></li>
       </ul>
     </div>
   </header>
@@ -105,22 +107,22 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <p class="eyebrow">Enterprise workload automation</p>
-          <h1>Define work. <span>Run it where files live.</span> Observe and secure.</h1>
+          <p class="eyebrow">Production-ready workload automation</p>
+          <h1>Define work. <span>Run it where files live.</span> Ship it to production.</h1>
           <p class="lead">
-            Just Run It is a web-based control plane for jobs, workflows, and schedules—
-            with agents you install on the systems that actually run your scripts and binaries.
-            Personal and group workspaces support federated teams on one shared platform.
+            Just Run It is a commercial control plane for jobs, workflows, and schedules—
+            with agents on the systems that run your scripts and binaries. Multi-team workspaces,
+            RBAC and SSO, execution triage, and HA deployment paths your ops teams already know.
           </p>
           <div class="hero-cta">
-            <a class="btn btn-primary" href="#contact">Request licensing information</a>
+            <a class="btn btn-primary" href="#contact">Request a production license</a>
             <a class="btn btn-secondary" href="#demo">Watch product demo</a>
-            <a class="btn btn-secondary" href="#downloads">Download product materials</a>
+            <a class="btn btn-secondary" href="#downloads">Product materials</a>
           </div>
           <div class="hero-meta">
-            <span><strong>Control plane</strong> UI + REST API</span>
+            <span><strong>Ready now</strong> Commercial licensing</span>
             <span><strong>Agents</strong> Linux, Windows, containers</span>
-            <span><strong>Deploy</strong> Docker, Kubernetes, bare metal</span>
+            <span><strong>Deploy</strong> Compose HA · Kubernetes · bare metal</span>
           </div>
         </div>
         <figure class="hero-shot">
@@ -138,11 +140,78 @@
       </div>
     </section>
 
+    <section id="why">
+      <div class="container">
+        <div class="section-head">
+          <h2>Built for production operations</h2>
+          <p>
+            Positioned for teams who need reliable automation <strong>now</strong> —
+            real shell and binary work on their hosts, clear ownership, and a control plane
+            operators will actually use every day.
+          </p>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="tag">Strength</span>
+            <h3>Run where files live</h3>
+            <p>
+              Federated agents on Linux and Windows claim work from the control plane.
+              Pin jobs to preferred hosts so start/stop scripts, batch jobs, and release
+              binaries execute next to the data and files they depend on.
+            </p>
+          </article>
+          <article class="card">
+            <span class="tag">Strength</span>
+            <h3>Operate with confidence</h3>
+            <p>
+              Full execution history, status filters, cancel and kill, failure reason and
+              log output, orphan recovery when an agent is lost mid-run, and optional email
+              alerts — the loop production ops teams live in.
+            </p>
+          </article>
+          <article class="card">
+            <span class="tag">Strength</span>
+            <h3>Govern multi-team estates</h3>
+            <p>
+              Personal, group, and platform workspaces on one shared control plane.
+              VIEWER / OPERATOR / ADMIN roles, audit attribution, and optional OIDC SSO
+              for enterprise identity.
+            </p>
+          </article>
+        </div>
+        <div class="grid-2" style="margin-top:1rem">
+          <article class="card">
+            <span class="tag">Strength</span>
+            <h3>Production deployment paths</h3>
+            <ul>
+              <li>PostgreSQL-backed multi-node app tier (Docker Compose reference HA)</li>
+              <li>Helm chart for Kubernetes / AKS</li>
+              <li>Bare-metal or VM Java 21 runtime; same agent JAR everywhere</li>
+              <li>REST API alongside the web UI for integration</li>
+            </ul>
+          </article>
+          <article class="card">
+            <span class="tag">Commercial</span>
+            <h3>Licensed software, available now</h3>
+            <p>
+              Just Run It is offered under <strong>commercial production licenses</strong>.
+              We work with you on deployment sizing, agent placement, and go-live so you can
+              start generating value from day one. Contact us for pricing and a guided rollout.
+            </p>
+            <p style="margin-top:0.85rem">
+              <a class="btn btn-primary btn-sm" href="#contact">Talk licensing</a>
+              <a class="btn btn-secondary btn-sm" href="#demo" style="margin-left:0.5rem">See it in action</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="capabilities" class="band">
       <div class="container">
         <div class="section-head">
-          <h2>What the product offers</h2>
-          <p>A complete offering for script- and binary-centric automation—without forcing every workload into a single host.</p>
+          <h2>What ships in the product</h2>
+          <p>A complete, production-capable offering for script- and binary-centric automation—without forcing every workload onto a single host.</p>
         </div>
         <div class="grid-3">
           <article class="card">
@@ -323,18 +392,18 @@
     <section id="deploy" class="band">
       <div class="container">
         <div class="section-head">
-          <h2>Deployment options &amp; environments</h2>
-          <p>From lab laptop to multi-node production—same product family.</p>
+          <h2>Production deployment options</h2>
+          <p>Same product from first install through multi-node production—choose the footprint that matches your estate.</p>
         </div>
         <div class="grid-2">
           <article class="card">
             <h3>Supported deployment models</h3>
             <ul>
-              <li><strong>Local JAR</strong> — single process with embedded H2 for evaluation</li>
-              <li><strong>Docker Compose</strong> — PostgreSQL, dual app nodes, dual agents (recommended lab / small prod)</li>
+              <li><strong>Docker Compose</strong> — PostgreSQL, dual app nodes, dual agents (recommended production starter / HA lab)</li>
               <li><strong>Kubernetes / AKS</strong> — Helm chart for server, agents, optional Postgres</li>
-              <li><strong>Synology Container Manager</strong> — packaged compose for NAS environments</li>
               <li><strong>Bare metal / VM</strong> — Java 21 runtime; agent JAR on any JVM host</li>
+              <li><strong>Synology Container Manager</strong> — packaged compose for NAS-style estates</li>
+              <li><strong>Local JAR</strong> — single process with embedded H2 for sandbox and demos</li>
             </ul>
             <div class="chips">
               <span class="chip">Java 21</span>
@@ -355,8 +424,9 @@
                             ▲
               Agents ───────┘  (claim work / report status)</pre>
             <p style="margin-top:0.85rem">
-              Environments typically separate <strong>lab</strong>, <strong>pre-production</strong>, and <strong>production</strong> control planes,
-              with agents co-located to each environment’s application estate.
+              Customers typically run dedicated <strong>production</strong> control planes (and optional
+              pre-production) with agents co-located to each environment’s application estate —
+              so work always runs next to the systems it serves.
             </p>
           </article>
         </div>
@@ -368,9 +438,9 @@
         <div class="section-head">
           <h2 id="demo-heading">Product demo video</h2>
           <p>
-            A ~2 minute walkthrough of the live control plane — sign-in, dashboard, jobs,
+            A ~2 minute walkthrough of the live production control plane — sign-in, dashboard, jobs,
             workflows, schedules, federated agents, execution triage, and admin RBAC.
-            Medium theme throughout. Suitable for sales calls and buyer evaluation.
+            Medium theme throughout. Built for sales calls and stakeholder reviews.
           </p>
         </div>
         <div class="demo-player">
@@ -404,7 +474,7 @@
       <div class="container">
         <div class="section-head">
           <h2>Downloads</h2>
-          <p>Public product materials for evaluation and licensing discussions. Internal engineering notes are not published here.</p>
+          <p>Customer-facing product materials for procurement, architecture review, and commercial licensing. Share freely with stakeholders.</p>
         </div>
         <div class="download-list">
           <div class="download-item">
@@ -456,14 +526,15 @@
     <section id="contact">
       <div class="container contact-box">
         <div class="contact-card">
-          <p class="eyebrow">Licensing &amp; information</p>
-          <h3>Talk to us about licensing Just Run It</h3>
+          <p class="eyebrow">Commercial licensing</p>
+          <h3>Ready to run in production — let’s talk license</h3>
           <p>
-            For commercial licensing, evaluation access, or architecture discussions,
-            email us. We respond with next steps for your environment and use case.
+            Just Run It is available for <strong>commercial production use</strong>.
+            Contact us for pricing, deployment sizing, and a rollout plan for your environments.
+            We respond quickly with clear next steps.
           </p>
           <p style="margin:0 0 0.35rem;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)">Email</p>
-          <a class="email-link" href="mailto:justrunit.io@gmail.com?subject=Just%20Run%20It%20licensing%20inquiry">
+          <a class="email-link" href="mailto:justrunit.io@gmail.com?subject=Just%20Run%20It%20production%20license%20inquiry">
             justrunit.io@gmail.com
           </a>
           <p style="margin:1.15rem 0 0.35rem;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)">Phone</p>
@@ -475,17 +546,17 @@
             Website: <a href="https://justrunit.io/">https://justrunit.io</a>
           </p>
           <div style="margin-top:1.25rem;display:flex;flex-wrap:wrap;gap:0.65rem">
-            <a class="btn btn-primary" href="mailto:justrunit.io@gmail.com?subject=Just%20Run%20It%20licensing%20inquiry">Compose email</a>
+            <a class="btn btn-primary" href="mailto:justrunit.io@gmail.com?subject=Just%20Run%20It%20production%20license%20inquiry">Request a quote</a>
             <a class="btn btn-secondary" href="tel:+13182322280">Call 318-232-2280</a>
           </div>
         </div>
         <div class="card">
-          <h3>What to include (optional)</h3>
+          <h3>What helps us price and plan (optional)</h3>
           <ul>
-            <li>Organization and primary use case</li>
-            <li>Approximate agent count / environments</li>
-            <li>Preferred deployment model (Docker, Kubernetes, on-prem)</li>
-            <li>Timeline for evaluation or production</li>
+            <li>Organization and primary production use cases</li>
+            <li>Approximate agent count and environments (prod / pre-prod)</li>
+            <li>Preferred deployment model (Docker Compose, Kubernetes, on-prem)</li>
+            <li>Target go-live window</li>
           </ul>
           <p style="margin-top:1rem;color:var(--muted);font-size:0.9rem">
             Product: <strong style="color:var(--text)">Just Run It</strong><br />
@@ -502,24 +573,28 @@
       <div class="container">
         <div class="section-head">
           <h2 id="faq-heading">Frequently asked questions</h2>
-          <p>Short answers for evaluators and searchers.</p>
+          <p>Short answers for buyers, operators, and searchers.</p>
         </div>
         <div class="seo-faq">
           <details>
             <summary>What is Just Run It?</summary>
-            <p>Just Run It is enterprise workload automation software: a web control plane for jobs, workflows, and schedules, plus out-of-process agents that run work on Linux, Windows, or container hosts.</p>
+            <p>Just Run It is production-ready enterprise workload automation: a web control plane for jobs, workflows, and schedules, plus out-of-process agents that run work on Linux, Windows, or container hosts you control.</p>
+          </details>
+          <details>
+            <summary>Is it ready for production use?</summary>
+            <p>Yes. The product ships with the capabilities operators need day to day — real COMMAND jobs, workflows, cron schedules, federated agents, workspaces, RBAC, optional OIDC, execution triage, and production deployment options (Compose HA, Kubernetes/Helm, bare metal). Commercial licenses are available now.</p>
           </details>
           <details>
             <summary>Can teams run jobs on their own servers?</summary>
             <p>Yes. Install agents on team-owned systems and pin jobs with preferred agent names. Workspaces keep personal and group catalogs separate on one shared control plane.</p>
           </details>
           <details>
-            <summary>How is it deployed?</summary>
-            <p>Local JAR for evaluation, Docker Compose for multi-node labs, Helm for Kubernetes, and a Synology package for NAS-style environments.</p>
+            <summary>How is it deployed in production?</summary>
+            <p>Recommended paths are Docker Compose with PostgreSQL and multi-node app tier, or Helm on Kubernetes. Bare-metal/VM Java 21 installs and Synology packaging are also supported. A local JAR is available for sandbox and demos.</p>
           </details>
           <details>
-            <summary>How do I license Just Run It?</summary>
-            <p>Email <a href="mailto:justrunit.io@gmail.com">justrunit.io@gmail.com</a> or call <a href="tel:+13182322280">318-232-2280</a> and leave a message — we will call back to discuss your needs.</p>
+            <summary>How do I buy or license Just Run It?</summary>
+            <p>Email <a href="mailto:justrunit.io@gmail.com">justrunit.io@gmail.com</a> or call <a href="tel:+13182322280">318-232-2280</a> and leave a message — we will call back to discuss production licensing, sizing, and go-live.</p>
           </details>
         </div>
       </div>
@@ -666,6 +741,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=20260731a"></script>
+  <script src="assets/js/main.js?v=20260731b"></script>
 </body>
 </html>

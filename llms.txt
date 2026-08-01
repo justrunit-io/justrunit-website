@@ -1,12 +1,19 @@
 # Just Run It
 
-> Enterprise workload automation control plane: jobs, workflows, schedules, federated agents, and workspaces.
+> Production-ready enterprise workload automation control plane: jobs, workflows, schedules, federated agents, and workspaces. Commercial licenses available.
 
 - Site: https://justrunit.io/
+- Product demo: https://justrunit.io/#demo
 - License contact: justrunit.io@gmail.com
 - Phone: 318-232-2280 (leave a message; we will call back)
 - Product GitHub (platform): https://github.com/justrunit-io/automation-platform
 - Website source: https://github.com/justrunit-io/justrunit-website
+
+## Positioning
+
+- Commercial production software available for license now
+- Strengths: run work where files live, multi-team workspaces, RBAC/OIDC, HA deploy paths
+- Not a public roadmap or gap analysis site — customer materials describe shipped capabilities
 
 ## Key capabilities
 
@@ -16,7 +23,8 @@
 - Out-of-process agents on Linux and Windows (pull model)
 - Personal, group, and platform workspaces
 - Local RBAC (VIEWER / OPERATOR / ADMIN) and optional OIDC SSO
-- Deploy: JAR, Docker Compose, Helm/Kubernetes, Synology
+- Execution triage: history, logs, cancel/kill, orphan recovery
+- Deploy: Docker Compose HA, Helm/Kubernetes, bare metal/VM, Synology; JAR for sandbox
 
 ## Public materials
 
@@ -24,3 +32,5 @@
 - https://justrunit.io/downloads/JustRunIt-Capabilities-By-Role.html
 - https://justrunit.io/downloads/JustRunIt-User-Guide.pdf
 - https://justrunit.io/downloads/JustRunIt-Agents-Guide.md
+- https://justrunit.io/downloads/JustRunIt-Product-Demo-Narration.md
+- https://justrunit.io/assets/video/justrunit-product-demo.mp4

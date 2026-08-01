@@ -10,6 +10,8 @@
     h2 { font-size: 1.15rem; margin-top: 1.75rem; border-bottom: 2px solid #0f172a; padding-bottom: 0.25rem; }
     .muted { color: #475569; }
     .meta { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 0.85rem 1rem; margin: 1rem 0; font-size: 0.9rem; }
+    .banner { background: #0f172a; color: #f1f5f9; border-radius: 8px; padding: 0.85rem 1rem; margin: 1rem 0; font-size: 0.95rem; }
+    .banner strong { color: #67e8f9; }
     ul { margin: 0.4rem 0 0.8rem 1.2em; }
     a { color: #1d4ed8; }
     code { background: #f1f5f9; padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
@@ -17,17 +19,30 @@
 </head>
 <body>
   <p class="muted" style="font-size:0.8rem;text-transform:uppercase;letter-spacing:0.08em;font-weight:700;color:#1d4ed8">Just Run It · Product overview</p>
-  <h1>Enterprise workload automation control plane</h1>
+  <h1>Production workload automation control plane</h1>
   <p class="muted">Define jobs and workflows, run them on federated agents where your files live, schedule execution, observe failures, and secure access with roles and workspaces.</p>
+  <div class="banner">
+    <strong>Commercial product, available now.</strong>
+    Just Run It is offered under production licenses for organizations ready to run automation on their estate.
+  </div>
   <div class="meta">
     <strong>Website:</strong> <a href="https://justrunit.io/">https://justrunit.io</a><br />
     <strong>Email:</strong>
     <a href="mailto:justrunit.io@gmail.com">justrunit.io@gmail.com</a><br />
     <strong>Phone:</strong> <a href="tel:+13182322280">318-232-2280</a>
-    — leave a message; we will call back to discuss your needs.
+    — leave a message; we will call back to discuss production licensing.
   </div>
 
-  <h2>The offering</h2>
+  <h2>Why customers choose Just Run It</h2>
+  <ul>
+    <li><strong>Run where files live</strong> — federated Linux/Windows agents on hosts you control</li>
+    <li><strong>Production job types</strong> — COMMAND (real shell), HTTP, GIT_RELEASE binaries, workflows, cron</li>
+    <li><strong>Operate with confidence</strong> — execution history, logs, cancel/kill, orphan recovery, optional email</li>
+    <li><strong>Multi-team governance</strong> — workspaces, RBAC, optional OIDC SSO, audit attribution</li>
+    <li><strong>Known deploy paths</strong> — Docker Compose HA, Kubernetes/Helm, bare metal/VM</li>
+  </ul>
+
+  <h2>What ships</h2>
   <ul>
     <li>Web UI control plane and REST API</li>
     <li>Jobs: COMMAND (shell), HTTP, NOOP, GIT_RELEASE (release asset download + execute)</li>
@@ -37,10 +52,10 @@
     <li>Personal, group, and platform workspaces for multi-team use</li>
     <li>Local RBAC (VIEWER / OPERATOR / ADMIN) and optional OIDC SSO</li>
     <li>Execution history, cancel/kill, orphan recovery, optional email notifications</li>
-    <li>Deploy via JAR, Docker Compose, Helm/Kubernetes, or Synology package</li>
+    <li>Deploy via Docker Compose, Helm/Kubernetes, bare metal/VM, Synology package, or sandbox JAR</li>
   </ul>
 
-  <h2>Federated use</h2>
+  <h2>Federated production use</h2>
   <ul>
     <li><strong>Control plane</strong> — one shared HA deployment for multiple teams</li>
     <li><strong>Workspaces</strong> — personal and group isolation of catalogs; admin full visibility</li>
@@ -50,16 +65,16 @@
   <h2>Technology baseline</h2>
   <ul>
     <li>Java 21, Spring Boot, Thymeleaf UI</li>
-    <li>PostgreSQL for production; H2 for local evaluation</li>
+    <li>PostgreSQL for production deployments; H2 for local sandbox</li>
     <li>Docker multi-stage builds; Helm chart for Kubernetes</li>
   </ul>
 
-  <h2>Contact</h2>
-  <p>For commercial licensing or evaluation discussions:</p>
+  <h2>Commercial licensing</h2>
+  <p>Production licenses are available now. Contact us for pricing, agent sizing, and go-live planning:</p>
   <ul>
-    <li>Email: <a href="mailto:justrunit.io@gmail.com">justrunit.io@gmail.com</a></li>
-    <li>Phone: <a href="tel:+13182322280">318-232-2280</a> — leave a message; we will call back to discuss your needs</li>
-    <li>Web: <a href="https://justrunit.io/">https://justrunit.io</a></li>
+    <li>Email: <a href="mailto:justrunit.io@gmail.com?subject=Just%20Run%20It%20production%20license%20inquiry">justrunit.io@gmail.com</a></li>
+    <li>Phone: <a href="tel:+13182322280">318-232-2280</a> — leave a message; we will call back</li>
+    <li>Web: <a href="https://justrunit.io/">https://justrunit.io</a> · Demo: <a href="https://justrunit.io/#demo">justrunit.io/#demo</a></li>
   </ul>
   <p class="muted" style="font-size:0.85rem;margin-top:2rem">© Just Run It. Public product materials only.</p>
 </body>
