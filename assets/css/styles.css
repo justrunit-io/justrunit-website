@@ -650,8 +650,8 @@ section {
 /* Architecture diagram */
 .arch {
   font-family: var(--mono);
-  font-size: 0.78rem;
-  line-height: 1.45;
+  font-size: 0.72rem;
+  line-height: 1.4;
   background: #0f172a;
   border: 1px solid var(--border);
   border-radius: var(--radius);

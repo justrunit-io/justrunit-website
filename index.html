@@ -26,7 +26,7 @@
   <meta name="twitter:description" content="Production-ready jobs, workflows, federated agents, and workspaces. Commercial licensing available." />
   <meta name="twitter:image" content="https://justrunit.io/assets/images/10-dashboard-medium.png" />
   <meta name="twitter:image:alt" content="Just Run It operations dashboard" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260731b" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260731c" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2360a5fa'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='12' font-family='sans-serif' font-weight='700' fill='%230f172a'%3EJR%3C/text%3E%3C/svg%3E" />
@@ -416,17 +416,31 @@
           </article>
           <article class="card">
             <h3>Reference architecture</h3>
-            <pre class="arch">UI / API  ──►  App node  ·  App node   (N replicas)
-                     │           │
-                     └──── shared DB ────┘
-                            │
-                       PostgreSQL
-                            ▲
-              Agents ───────┘  (claim work / report status)</pre>
+            <pre class="arch"> Operators / UI
+        │
+        │  HTTPS  ·  REST API  ·  session or SSO
+        ▼
+  ┌─────────────────────────────────────┐
+  │  Control plane (N app nodes)          │
+  │  UI · REST · scheduler · RBAC         │
+  └───────────────┬─────────────────────┘
+                  │ private DB network
+                  ▼
+            PostgreSQL
+         (system of record)
+
+  Agents (Linux / Windows / containers)
+        │
+        │  HTTPS outbound only
+        │  register · heartbeat · claim · complete
+        │  authenticated agent API (no direct DB)
+        └──────────────────────────────►  Control plane</pre>
             <p style="margin-top:0.85rem">
-              Customers typically run dedicated <strong>production</strong> control planes (and optional
-              pre-production) with agents co-located to each environment’s application estate —
-              so work always runs next to the systems it serves.
+              <strong>Agents never connect to the database.</strong> They call the control plane over
+              a secured HTTP API (register, claim, complete). Only app nodes talk to PostgreSQL on a
+              private network. Customers typically run dedicated <strong>production</strong> control
+              planes (and optional pre-production) with agents co-located to each environment’s
+              application estate—so work runs next to the systems it serves.
             </p>
           </article>
         </div>
@@ -741,6 +755,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=20260731b"></script>
+  <script src="assets/js/main.js?v=20260731c"></script>
 </body>
 </html>
