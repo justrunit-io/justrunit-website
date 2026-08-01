@@ -9,6 +9,7 @@ Materials under `website/downloads/` are customer-facing.
 - Agent operational model (name, hostname, preferred agent, pull claim)  
 - Deployment options (Docker, Helm, JAR, Synology)  
 - Screenshots of the control plane  
+- Product demo video (MP4/WebM) and sales narration guide  
 - Licensing contact email  
 
 ## Exclude

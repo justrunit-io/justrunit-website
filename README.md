@@ -71,5 +71,18 @@ Then attach `justrunit.io` in the dashboard under that project’s **Custom doma
 | `downloads/JustRunIt-Product-Overview.html` | Offering summary |
 | `downloads/JustRunIt-Capabilities-By-Role.html` | User / admin / sysop lists |
 | `downloads/JustRunIt-Agents-Guide.md` | Agent name, hostname, federation |
+| `assets/video/justrunit-product-demo.mp4` | ~2 min product demo (sales / website) |
+| `downloads/JustRunIt-Product-Demo-Narration.md` | Voice-over talking points for the demo |
+
+### Re-record product demo
+
+With the control plane running on `localhost:8080`:
+
+```bash
+# Playwright from a directory that has node_modules/playwright
+cd /tmp && JRI_VIDEO_OUT=/path/to/website/assets/video \
+  node /path/to/website/scripts/record-product-demo.mjs
+# Full ffmpeg recommended for MP4 (libx264). Set FFMPEG=/path/to/ffmpeg if needed.
+```
 
 Do **not** add internal gap analyses, security scan dumps, or roadmaps — see `PUBLIC-DOWNLOADS.md`.

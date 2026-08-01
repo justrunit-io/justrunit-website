@@ -19,3 +19,7 @@
 # Full-size screenshots are large; allow longer cache after versioned deploy
 /assets/images/*
   Cache-Control: public, max-age=604800, immutable
+
+# Product demo video (MP4/WebM) — cacheable after deploy
+/assets/video/*
+  Cache-Control: public, max-age=604800, immutable
