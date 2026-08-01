@@ -12,7 +12,6 @@ not internal gaps.
 - Agent operational model (name, hostname, preferred agent, pull claim)  
 - Production deployment options (Compose HA, Helm, bare metal, Synology; JAR for sandbox)  
 - Screenshots and product demo video  
-- Sales narration and licensing CTAs  
 - Commercial licensing contact  
 
 ## Exclude
