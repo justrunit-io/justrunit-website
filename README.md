@@ -68,9 +68,9 @@ Then attach `justrunit.io` in the dashboard under that project’s **Custom doma
 | File | Purpose |
 |------|---------|
 | `downloads/JustRunIt-User-Guide.pdf` | UI / capabilities walkthrough |
-| `downloads/JustRunIt-Product-Overview.html` | Offering summary |
-| `downloads/JustRunIt-Capabilities-By-Role.html` | User / admin / sysop lists |
-| `downloads/JustRunIt-Agents-Guide.md` | Agent name, hostname, federation |
+| `downloads/JustRunIt-Product-Overview.pdf` | Offering summary |
+| `downloads/JustRunIt-Capabilities-By-Role.pdf` | User / admin / sysop lists |
+| `downloads/JustRunIt-Agents-Guide.pdf` | Agent name, hostname, federation |
 | `assets/video/justrunit-product-demo.mp4` | ~2 min product demo (sales / website) |
 
 ### Re-record product demo

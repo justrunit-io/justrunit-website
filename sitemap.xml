@@ -37,23 +37,23 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://justrunit.io/downloads/JustRunIt-Product-Overview.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://justrunit.io/downloads/JustRunIt-Capabilities-By-Role.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://justrunit.io/downloads/JustRunIt-User-Guide.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justrunit.io/downloads/JustRunIt-Product-Overview.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://justrunit.io/downloads/JustRunIt-Agents-Guide.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://justrunit.io/downloads/JustRunIt-Agents-Guide.md</loc>
+    <loc>https://justrunit.io/downloads/JustRunIt-Capabilities-By-Role.pdf</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
 </urlset>
