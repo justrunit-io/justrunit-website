@@ -10,7 +10,7 @@ not internal gaps.
 - Shipped production capabilities and strengths  
 - Role-based feature lists (user, admin, systems operator)  
 - Agent operational model (name, hostname, preferred agent, pull claim)  
-- Production deployment options (Compose HA, Helm, bare metal, Synology; JAR for sandbox)  
+- Production deployment options (Compose HA, Helm, bare metal; JAR for sandbox)  
 - Screenshots and product demo video  
 - Commercial licensing contact  
 

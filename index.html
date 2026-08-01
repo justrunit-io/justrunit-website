@@ -305,7 +305,6 @@
               <tr><td>Execution modes</td><td><code>local</code> (server runs jobs) or <code>agent</code> (workers claim work)—production typically agent mode</td></tr>
               <tr><td>Containers</td><td>Docker Compose stack (Postgres + app nodes + agents); multi-stage images built from source</td></tr>
               <tr><td>Kubernetes</td><td>Helm chart for server HA, agents, and optional in-cluster Postgres</td></tr>
-              <tr><td>Appliance / NAS</td><td>Synology Container Manager package under deploy/synology</td></tr>
               <tr><td>Health</td><td>Spring Actuator health, readiness, metrics, Prometheus endpoint</td></tr>
               <tr><td>Notifications</td><td>Optional email on failure (and optional success) via SMTP</td></tr>
               <tr><td>Artifacts</td><td>Configurable cache directory for GIT_RELEASE downloads on server or agent hosts</td></tr>
@@ -399,10 +398,9 @@
           <article class="card">
             <h3>Supported deployment models</h3>
             <ul>
-              <li><strong>Docker Compose</strong> — PostgreSQL, dual app nodes, dual agents (recommended production starter / HA lab)</li>
+              <li><strong>Docker Compose</strong> — PostgreSQL, dual app nodes, dual agents (recommended production starter)</li>
               <li><strong>Kubernetes / AKS</strong> — Helm chart for server, agents, optional Postgres</li>
               <li><strong>Bare metal / VM</strong> — Java 21 runtime; agent JAR on any JVM host</li>
-              <li><strong>Synology Container Manager</strong> — packaged compose for NAS-style estates</li>
               <li><strong>Local JAR</strong> — single process with embedded H2 for sandbox and demos</li>
             </ul>
             <div class="chips">
@@ -595,7 +593,7 @@
           </details>
           <details>
             <summary>How is it deployed in production?</summary>
-            <p>Recommended paths are Docker Compose with PostgreSQL and multi-node app tier, or Helm on Kubernetes. Bare-metal/VM Java 21 installs and Synology packaging are also supported. A local JAR is available for sandbox and demos.</p>
+            <p>Recommended paths are Docker Compose with PostgreSQL and multi-node app tier, or Helm on Kubernetes. Bare-metal/VM Java 21 installs are also supported. A local JAR is available for sandbox and demos.</p>
           </details>
           <details>
             <summary>How do I buy or license Just Run It?</summary>

@@ -24,7 +24,7 @@
 - Personal, group, and platform workspaces
 - Local RBAC (VIEWER / OPERATOR / ADMIN) and optional OIDC SSO
 - Execution triage: history, logs, cancel/kill, orphan recovery
-- Deploy: Docker Compose HA, Helm/Kubernetes, bare metal/VM, Synology; JAR for sandbox
+- Deploy: Docker Compose HA, Helm/Kubernetes, bare metal/VM; JAR for sandbox
 
 ## Public materials
 
