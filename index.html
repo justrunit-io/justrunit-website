@@ -26,7 +26,7 @@
   <meta name="twitter:description" content="Production-ready jobs, workflows, federated agents, and workspaces. Commercial licensing available." />
   <meta name="twitter:image" content="https://justrunit.io/assets/images/10-dashboard-medium.png" />
   <meta name="twitter:image:alt" content="Just Run It operations dashboard" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=20260731c" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=20260803a" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2360a5fa'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-size='12' font-family='sans-serif' font-weight='700' fill='%230f172a'%3EJR%3C/text%3E%3C/svg%3E" />
@@ -69,9 +69,9 @@
           "Workflows with conditions and restart",
           "Cron schedules",
           "Federated Linux and Windows agents",
-          "Personal and group workspaces",
+          "Personal and group workspaces with multi-team isolation",
           "HA Docker Compose and Helm deployment",
-          "Local RBAC and OIDC SSO",
+          "Local RBAC and OIDC SSO with IdP group role mapping",
           "Execution triage and orphan recovery"
         ]
       }
@@ -239,8 +239,9 @@
             <h3>Security &amp; workspaces</h3>
             <ul>
               <li>Local users with VIEWER / OPERATOR / ADMIN roles</li>
-              <li>Optional OIDC SSO (Entra ID, Okta, Keycloak, and similar)</li>
-              <li>Personal, group, and platform workspaces for federated teams</li>
+              <li>OIDC SSO with IdP group → role mapping (Entra ID, Okta, Keycloak)</li>
+              <li>Hybrid mode: SSO for people + local break-glass; agents use HTTP Basic</li>
+              <li>Personal, group, and platform workspaces — multi-team isolation on one plane</li>
               <li>Audit trail with actor attribution</li>
             </ul>
           </article>
@@ -357,7 +358,10 @@
       <div class="container">
         <div class="section-head">
           <h2>Workspaces for federated teams</h2>
-          <p>One control plane; clear boundaries for who sees and manages which automation.</p>
+          <p>
+            One control plane; clear boundaries for who sees and manages which automation.
+            Pair with <strong>OIDC SSO</strong> so IdP groups map to VIEWER / OPERATOR / ADMIN while membership scopes each team’s catalog.
+          </p>
         </div>
         <div class="grid-3">
           <article class="card">
@@ -383,7 +387,13 @@
             <li><strong>Agent federation</strong> — agents remain on team-owned systems; preferred agent binds a job to the right host</li>
             <li><strong>Least privilege of view</strong> — non-admins only see workspaces they belong to; admins retain full oversight</li>
             <li><strong>Same-workspace integrity</strong> — workflow steps and schedules must reference jobs in the same workspace</li>
+            <li><strong>Enterprise SSO</strong> — hybrid or OIDC-primary modes (Entra ID, Okta, Keycloak); IdP groups map to platform roles; agents keep HTTP Basic service accounts</li>
+            <li><strong>Isolation proof</strong> — same OPERATOR role can serve Finance and Platform teams without shared job catalogs</li>
           </ul>
+          <p style="margin-top:0.85rem">
+            <a class="btn btn-secondary btn-sm" href="#demo">Watch SSO + workspace demo</a>
+            <a class="btn btn-secondary btn-sm" href="downloads/JustRunIt-Security-Overview.pdf" style="margin-left:0.5rem">Security overview PDF</a>
+          </p>
         </div>
       </div>
     </section>
@@ -450,32 +460,69 @@
     <section id="demo" class="band" aria-labelledby="demo-heading">
       <div class="container">
         <div class="section-head">
-          <h2 id="demo-heading">Product demo video</h2>
+          <h2 id="demo-heading">Product demo videos</h2>
           <p>
-            A ~2 minute walkthrough of the live production control plane — sign-in, dashboard, jobs,
-            workflows, schedules, federated agents, execution triage, and admin RBAC.
-            Medium theme throughout. Built for sales calls and stakeholder reviews.
+            Live control-plane captures (medium theme) with on-screen chapter captions.
+            Use on sales calls, architecture reviews, and security walkthroughs.
           </p>
         </div>
-        <div class="demo-player">
-          <video
-            controls
-            playsinline
-            preload="metadata"
-            poster="assets/images/10-dashboard-medium.png"
-            width="1920"
-            height="1080"
-          >
-            <source src="assets/video/justrunit-product-demo.mp4" type="video/mp4" />
-            <source src="assets/video/justrunit-product-demo.webm" type="video/webm" />
-            Your browser does not support embedded video.
-            <a href="assets/video/justrunit-product-demo.mp4">Download the MP4 demo</a>.
-          </video>
-        </div>
-        <div class="demo-actions">
-          <a class="btn btn-primary btn-sm" href="assets/video/justrunit-product-demo.mp4" download>Download MP4 (5&nbsp;MB)</a>
-          <a class="btn btn-secondary btn-sm" href="#contact">License &amp; contact</a>
-        </div>
+
+        <article class="demo-block" style="margin-bottom:2rem">
+          <h3 style="font-size:1.15rem;margin-bottom:0.35rem">OIDC SSO + workspace isolation</h3>
+          <p class="demo-note" style="margin-top:0;margin-bottom:0.85rem">
+            ~3 minute elaborate walkthrough: hybrid login, Keycloak SSO (same pattern as Entra ID / Okta),
+            IdP groups → VIEWER / OPERATOR / ADMIN, Finance vs Platform team catalogs, admin groups &amp; users,
+            and agents on HTTP Basic (not browser OAuth).
+          </p>
+          <div class="demo-player">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster="assets/images/10-dashboard-medium.png"
+              width="1920"
+              height="1080"
+            >
+              <source src="assets/video/justrunit-oidc-workspace-demo.mp4" type="video/mp4" />
+              <source src="assets/video/justrunit-oidc-workspace-demo.webm" type="video/webm" />
+              Your browser does not support embedded video.
+              <a href="assets/video/justrunit-oidc-workspace-demo.mp4">Download the OIDC demo MP4</a>.
+            </video>
+          </div>
+          <div class="demo-actions">
+            <a class="btn btn-primary btn-sm" href="assets/video/justrunit-oidc-workspace-demo.mp4" download>Download OIDC demo MP4 (~7&nbsp;MB)</a>
+            <a class="btn btn-secondary btn-sm" href="#workspaces">Workspaces</a>
+            <a class="btn btn-secondary btn-sm" href="downloads/JustRunIt-Security-Overview.pdf">Security PDF</a>
+          </div>
+        </article>
+
+        <article class="demo-block">
+          <h3 style="font-size:1.15rem;margin-bottom:0.35rem">Control plane tour</h3>
+          <p class="demo-note" style="margin-top:0;margin-bottom:0.85rem">
+            ~2 minute product tour: dashboard, jobs, editor, run, workflows, schedules, agents,
+            executions, and admin users.
+          </p>
+          <div class="demo-player">
+            <video
+              controls
+              playsinline
+              preload="metadata"
+              poster="assets/images/10-dashboard-medium.png"
+              width="1920"
+              height="1080"
+            >
+              <source src="assets/video/justrunit-product-demo.mp4" type="video/mp4" />
+              <source src="assets/video/justrunit-product-demo.webm" type="video/webm" />
+              Your browser does not support embedded video.
+              <a href="assets/video/justrunit-product-demo.mp4">Download the product tour MP4</a>.
+            </video>
+          </div>
+          <div class="demo-actions">
+            <a class="btn btn-secondary btn-sm" href="assets/video/justrunit-product-demo.mp4" download>Download product tour MP4 (~5&nbsp;MB)</a>
+            <a class="btn btn-secondary btn-sm" href="#contact">License &amp; contact</a>
+          </div>
+        </article>
+
         <p class="demo-note">
           Silent picture with on-screen chapter captions — present while the video plays on customer calls.
         </p>
@@ -491,8 +538,15 @@
         <div class="download-list">
           <div class="download-item">
             <div>
-              <h3>Product demo (MP4)</h3>
-              <p>~2 min live UI walkthrough — jobs, workflows, agents, schedules, executions. Share with stakeholders.</p>
+              <h3>OIDC + workspace demo (MP4)</h3>
+              <p>~3 min SSO walkthrough — Keycloak groups to roles, Finance vs Platform isolation, admin groups.</p>
+            </div>
+            <a class="btn btn-secondary btn-sm" href="assets/video/justrunit-oidc-workspace-demo.mp4" download>Download MP4</a>
+          </div>
+          <div class="download-item">
+            <div>
+              <h3>Control plane tour (MP4)</h3>
+              <p>~2 min live UI walkthrough — jobs, workflows, agents, schedules, executions.</p>
             </div>
             <a class="btn btn-secondary btn-sm" href="assets/video/justrunit-product-demo.mp4" download>Download MP4</a>
           </div>
@@ -645,7 +699,7 @@
               <img src="assets/images/01-login.png" srcset="assets/images/full/01-login.png 1800w" width="1800" height="1125" alt="Just Run It sign-in page with local login" loading="lazy" decoding="async" />
             </a>
             <figcaption>
-              <div class="cap-text"><strong>Sign-in</strong> Local authentication; optional SSO when OIDC is configured.</div>
+              <div class="cap-text"><strong>Sign-in</strong> Hybrid local + OIDC SSO; IdP groups map to platform roles.</div>
               <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/01-login.png" target="_blank" rel="noopener">Open full size</a></div>
             </figcaption>
           </figure>
@@ -760,6 +814,6 @@
     </div>
   </div>
 
-  <script src="assets/js/main.js?v=20260731c"></script>
+  <script src="assets/js/main.js?v=20260803a"></script>
 </body>
 </html>

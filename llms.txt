@@ -34,4 +34,5 @@
 - https://justrunit.io/downloads/JustRunIt-Product-Overview.pdf
 - https://justrunit.io/downloads/JustRunIt-Agents-Guide.pdf
 - https://justrunit.io/downloads/JustRunIt-Capabilities-By-Role.pdf
+- https://justrunit.io/assets/video/justrunit-oidc-workspace-demo.mp4
 - https://justrunit.io/assets/video/justrunit-product-demo.mp4
