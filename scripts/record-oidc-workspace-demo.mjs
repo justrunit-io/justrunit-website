@@ -69,6 +69,14 @@ async function setMedium(page) {
   await page.addInitScript(() => {
     localStorage.setItem('automation-theme', 'medium');
     document.documentElement.setAttribute('data-theme', 'medium');
+    const hideHint = () => {
+      document.querySelectorAll('.hint').forEach((el) => {
+        if ((el.textContent || '').toLowerCase().includes('change-me')) el.style.display = 'none';
+      });
+    };
+    hideHint();
+    document.addEventListener('DOMContentLoaded', hideHint);
+    new MutationObserver(hideHint).observe(document.documentElement, { childList: true, subtree: true });
   });
 }
 
@@ -170,9 +178,27 @@ async function gentleScroll(page, total = 220, steps = 7) {
   await sleep(300);
 }
 
+async function stripLabHint(page) {
+  await page.route('**/login**', async (route) => {
+    const url = new URL(route.request().url());
+    if (route.request().resourceType() !== 'document' || !url.pathname.endsWith('/login')) {
+      await route.continue();
+      return;
+    }
+    const response = await route.fetch();
+    const body = (await response.text()).replace(/<p class="hint"[\s\S]*?<\/p>/gi, '');
+    await route.fulfill({ response, body });
+  });
+}
+
 async function goApp(page, urlPath = '/') {
   await page.goto(BASE + urlPath, { waitUntil: 'networkidle', timeout: 60000 });
   await applyMedium(page);
+  await page.evaluate(() => {
+    document.querySelectorAll('p.hint').forEach((el) => {
+      if ((el.textContent || '').toLowerCase().includes('change-me')) el.remove();
+    });
+  }).catch(() => {});
   await sleep(350);
 }
 
@@ -323,6 +349,7 @@ async function main() {
   });
   const page = await context.newPage();
   await setMedium(page);
+  await stripLabHint(page);
 
   // ── Opening ──────────────────────────────────────────────
   await showCard(page, {
@@ -462,11 +489,40 @@ async function main() {
   }
 
   await openNav(page, 'Agents');
-  await caption(page, 'Agents use HTTP Basic (service account) — not browser OIDC. Correct enterprise pattern.', {
+  await caption(page, 'Private-network agents use HTTP Basic. A remote agent uses HTTPS and a short-lived token.', {
     holdMs: 3400,
   });
   await gentleScroll(page, 140);
   await sleep(700);
+
+  const poolsLink = page.locator('a[href*="/admin/agent-pools"]').first();
+  if (await poolsLink.count()) {
+    await poolsLink.click();
+    await page.waitForLoadState('networkidle').catch(() => null);
+    await applyMedium(page);
+    await caption(page, 'Agent pools — a workspace names the hosts that may claim its jobs', { holdMs: 3000 });
+    const poolMembers = page.locator('a:has-text("Members")').first();
+    if (await poolMembers.count()) {
+      await poolMembers.click();
+      await page.waitForLoadState('networkidle').catch(() => null);
+      await applyMedium(page);
+      await caption(page, 'Online members share the work. One agent process runs one job, then asks for the next.', {
+        holdMs: 3200,
+      });
+      await sleep(600);
+    }
+  }
+
+  const jobFile = page.locator('a[href*="/admin/definitions"]').first();
+  if (await jobFile.count()) {
+    await jobFile.click();
+    await page.waitForLoadState('networkidle').catch(() => null);
+    await applyMedium(page);
+    await caption(page, 'Job file — export, review, and apply jobs, workflows, and schedules by name', {
+      holdMs: 3400,
+    });
+    await sleep(700);
+  }
 
   // ── Close ────────────────────────────────────────────────
   await clearCaption(page);

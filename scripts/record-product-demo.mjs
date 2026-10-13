@@ -71,6 +71,14 @@ async function setMedium(page) {
   await page.addInitScript(() => {
     localStorage.setItem('automation-theme', 'medium');
     document.documentElement.setAttribute('data-theme', 'medium');
+    const hideHint = () => {
+      document.querySelectorAll('.hint').forEach((el) => {
+        if ((el.textContent || '').toLowerCase().includes('change-me')) el.style.display = 'none';
+      });
+    };
+    hideHint();
+    document.addEventListener('DOMContentLoaded', hideHint);
+    new MutationObserver(hideHint).observe(document.documentElement, { childList: true, subtree: true });
   });
 }
 
@@ -165,9 +173,27 @@ async function clearCaption(page) {
   }).catch(() => {});
 }
 
+async function stripLabHint(page) {
+  await page.route('**/login**', async (route) => {
+    const url = new URL(route.request().url());
+    if (route.request().resourceType() !== 'document' || !url.pathname.endsWith('/login')) {
+      await route.continue();
+      return;
+    }
+    const response = await route.fetch();
+    const body = (await response.text()).replace(/<p class="hint"[\s\S]*?<\/p>/gi, '');
+    await route.fulfill({ response, body });
+  });
+}
+
 async function go(page, urlPath) {
   await page.goto(BASE + urlPath, { waitUntil: 'networkidle', timeout: 60000 });
   await applyMedium(page);
+  await page.evaluate(() => {
+    document.querySelectorAll('p.hint').forEach((el) => {
+      if ((el.textContent || '').toLowerCase().includes('change-me')) el.remove();
+    });
+  }).catch(() => {});
   await sleep(400);
 }
 
@@ -215,6 +241,7 @@ async function main() {
   });
   const page = await context.newPage();
   await setMedium(page);
+  await stripLabHint(page);
 
   // ── Opening ──────────────────────────────────────────────
   await showCard(page, {
@@ -254,7 +281,7 @@ async function main() {
     await page.click(`a[href="${editHref}"]`);
     await page.waitForLoadState('networkidle');
     await applyMedium(page);
-    await caption(page, 'Job editor — type, payload, preferred agent, timeouts, concurrency', { holdMs: 3000 });
+    await caption(page, 'Job editor — type, payload, preferred agent, and the workspace pool', { holdMs: 3000 });
     await gentleScroll(page, 240);
     await sleep(900);
   }
@@ -310,13 +337,31 @@ async function main() {
   await showCard(page, {
     eyebrow: 'Run where work lives',
     title: 'Federated agents',
-    body: 'Linux, Windows, containers — register workers, track capacity and heartbeats, pin preferred hosts.',
+    body: 'Linux, Windows, containers — register workers, track load and heartbeats, and group hosts in an agent pool.',
     seconds: 3.5,
   });
   await go(page, '/agents');
-  await caption(page, 'Agents — ONLINE capacity, heartbeats, federated execution hosts', { holdMs: 3000 });
+  await caption(page, 'Agents — online hosts, load, and which pool each one belongs to', { holdMs: 3000 });
   await gentleScroll(page, 160);
   await sleep(900);
+
+  // ── Agent pools ──────────────────────────────────────────
+  await showCard(page, {
+    eyebrow: 'Share a team’s hosts',
+    title: 'Agent pools',
+    body: 'A workspace names a pool. Jobs with no preferred agent run on any online member of that pool.',
+    seconds: 3.4,
+  });
+  await go(page, '/admin/agent-pools');
+  await caption(page, 'Agent pools — named sets of agents, assigned to a workspace', { holdMs: 2600 });
+  const poolMembers = page.locator('a:has-text("Members")').first();
+  if (await poolMembers.count()) {
+    await poolMembers.click();
+    await page.waitForLoadState('networkidle');
+    await applyMedium(page);
+    await caption(page, 'Pool members share the workspace’s jobs. One agent process runs one job at a time.', { holdMs: 3200 });
+    await sleep(800);
+  }
 
   // ── Executions ───────────────────────────────────────────
   await showCard(page, {
@@ -348,9 +393,19 @@ async function main() {
     seconds: 3.4,
   });
   await go(page, '/admin/users');
-  await caption(page, 'User administration — roles, enable/disable, password management', { holdMs: 2800 });
+  await caption(page, 'Local users — roles for break-glass accounts. Company SSO users stay in the identity provider.', { holdMs: 2800 });
   await gentleScroll(page, 160);
-  await sleep(1000);
+  await sleep(800);
+
+  await showCard(page, {
+    eyebrow: 'Move definitions',
+    title: 'The job file',
+    body: 'Export, review, and apply jobs, workflows, and schedules by workspace and name. Hosts and run history stay behind.',
+    seconds: 3.5,
+  });
+  await go(page, '/admin/definitions');
+  await caption(page, 'Job file — review a plan before anything is written', { holdMs: 3200 });
+  await sleep(900);
 
   // ── Close ────────────────────────────────────────────────
   await clearCaption(page);
