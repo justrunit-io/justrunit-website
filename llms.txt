@@ -17,13 +17,18 @@
 
 ## Key capabilities
 
-- Job types: COMMAND (shell), HTTP, NOOP, GIT_RELEASE
+- Job types: COMMAND (shell), HTTP, NOOP, GIT_RELEASE. A command succeeds on exit code 0. A job can be turned off to stop new runs
 - Workflows with conditions and restart from failed step
 - Cron schedules for jobs or workflows
-- Out-of-process agents on Linux and Windows (pull model)
+- Out-of-process agents on Linux and Windows (pull model). A workspace agent pool, or a preferred agent for one host
+- On Linux the agent refuses to start as root. The command has that account's rights
+- Remote agents use HTTPS and a short-lived identity-provider token. HTTP Basic remains for a private network
 - Personal, group, and platform workspaces
-- Local RBAC (VIEWER / OPERATOR / ADMIN) and optional OIDC SSO
-- Execution triage: history, logs, cancel/kill, orphan recovery
+- RBAC: VIEWER is read-only even as a workspace owner. OPERATOR runs and edits managed workspaces. ADMIN governs users, groups, deletes, and the definition file
+- Audit: who changed a job, workflow, or schedule, when, and the fields before and after
+- Administrators export jobs, workflows, and schedules, review adds, updates, and removals, and apply only confirmed lines. History and hostnames stay out of the file
+- The API catalog is for administrators. Operators and agents call the API. Viewers do not
+- Execution triage: history, logs, cancel/kill, orphan recovery. Agent load is the work actually running
 - Deploy: Docker Compose HA, Helm/Kubernetes, bare metal/VM; JAR for sandbox
 
 ## Public materials (PDF)

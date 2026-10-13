@@ -71,9 +71,12 @@
           "Workflows with conditions and restart",
           "Cron schedules",
           "Federated Linux and Windows agents",
+          "Agent pools and preferred-agent pinning",
           "Personal and group workspaces with multi-team isolation",
           "HA Docker Compose and Helm deployment",
           "Local RBAC and OIDC SSO with IdP group role mapping",
+          "Definition export, review, and apply",
+          "Audit of who changed a definition and which fields moved",
           "Execution triage and orphan recovery"
         ]
       }
@@ -114,7 +117,7 @@
           <p class="lead">
             Just Run It is a commercial control plane for jobs, workflows, and schedules—
             with agents on the systems that run your scripts and binaries. Multi-team workspaces,
-            RBAC and SSO, execution triage, and HA deployment paths your ops teams already know.
+            agent pools, RBAC and SSO, execution triage, and HA deployment paths your ops teams already know.
           </p>
           <div class="hero-cta">
             <a class="btn btn-primary" href="#contact">Request a production license</a>
@@ -158,8 +161,9 @@
             <h3>Run where files live</h3>
             <p>
               Federated agents on Linux and Windows claim work from the control plane.
-              Pin jobs to preferred hosts so start/stop scripts, batch jobs, and release
-              binaries execute next to the data and files they depend on.
+              A workspace can name a pool of those agents, so the team’s jobs stay on the
+              team’s machines and a second host covers a reboot. A preferred agent still
+              pins one job to one host.
             </p>
           </article>
           <article class="card">
@@ -176,8 +180,9 @@
             <h3>Govern multi-team estates</h3>
             <p>
               Personal, group, and platform workspaces on one shared control plane.
-              VIEWER / OPERATOR / ADMIN roles, audit attribution, and optional OIDC SSO
-              for enterprise identity.
+              A viewer is read-only. Operators run and edit the workspaces they manage.
+              The audit record names who changed a definition and which fields moved.
+              Optional OIDC SSO uses the identity provider you already run.
             </p>
           </article>
         </div>
@@ -189,7 +194,7 @@
               <li>PostgreSQL-backed multi-node app tier (Docker Compose reference HA)</li>
               <li>Helm chart for Kubernetes / AKS</li>
               <li>Bare-metal or VM Java 21 runtime; same agent JAR everywhere</li>
-              <li>REST API alongside the web UI for integration</li>
+              <li>REST API for operators and agents; the API catalog is for administrators</li>
             </ul>
           </article>
           <article class="card">
@@ -232,19 +237,22 @@
             <ul>
               <li>Out-of-process agents claim work from the control plane</li>
               <li>Same agent JAR on Linux and Windows</li>
-              <li>Preferred agent pinning for host-specific scripts</li>
-              <li>Cancel / kill, retries, and orphan recovery when an agent is lost mid-run</li>
+              <li>A workspace pool, or a preferred agent when one host must run the job</li>
+              <li>On Linux the agent refuses to start as root. The command has that account’s rights</li>
+              <li>Cancel / kill, retries, orphan recovery, and a load count of work actually running</li>
+              <li>Turn a job off to stop new runs, including a manual run</li>
             </ul>
           </article>
           <article class="card">
             <span class="tag">Govern</span>
             <h3>Security &amp; workspaces</h3>
             <ul>
-              <li>Local users with VIEWER / OPERATOR / ADMIN roles</li>
-              <li>OIDC SSO with IdP group → role mapping (Entra ID, Okta, Keycloak)</li>
-              <li>Hybrid mode: SSO for people + local break-glass; agents use HTTP Basic</li>
+              <li>VIEWER, OPERATOR, and ADMIN. A viewer is read-only, even as a workspace owner</li>
+              <li>OIDC SSO with IdP group → role mapping (Entra ID, Okta, Keycloak), including SSO-only sign-in</li>
+              <li>Remote agents use HTTPS and a short-lived token. Private-network agents may use HTTP Basic. A public entrance can refuse that password</li>
               <li>Personal, group, and platform workspaces — multi-team isolation on one plane</li>
-              <li>Audit trail with actor attribution</li>
+              <li>Audit trail: who, when, and the fields before and after</li>
+              <li>Administrators export jobs, workflows, and schedules, review every change, and apply only what they confirm</li>
             </ul>
           </article>
         </div>
@@ -271,8 +279,8 @@
             <tbody>
               <tr><td>Catalog</td><td>Browse jobs, workflows, and schedules in workspaces you can see (personal, groups, platform shared)</td></tr>
               <tr><td>Run</td><td>Run now for jobs and workflows (OPERATOR+); view execution status and logs</td></tr>
-              <tr><td>Create</td><td>Create and edit jobs, workflows, and schedules in workspaces you manage (personal ownership or group manager)</td></tr>
-              <tr><td>Schedules</td><td>Attach cron expressions; human-readable schedule descriptions in the UI</td></tr>
+              <tr><td>Create</td><td>Operators create and edit jobs, workflows, and schedules in workspaces they manage. A viewer cannot, even as the owner of a workspace</td></tr>
+              <tr><td>Schedules</td><td>Attach cron expressions; human-readable schedule descriptions in the UI. Turning a job off stops new runs and refuses a manual run</td></tr>
               <tr><td>History</td><td>Search and filter executions; open detail with error reason and log output; filter failed runs</td></tr>
               <tr><td>Recovery</td><td>Cancel queued/running work; requeue orphaned executions after agent loss (where permitted)</td></tr>
               <tr><td>Workspace filter</td><td>Sidebar switcher focuses lists and dashboards on a selected workspace</td></tr>
@@ -292,8 +300,9 @@
               <tr><td>Groups</td><td>Create group workspaces; add and remove members (OWNER / MANAGER / MEMBER)</td></tr>
               <tr><td>Platform workspace</td><td>Maintain company-shared job definitions visible to authenticated users</td></tr>
               <tr><td>Security modes</td><td>Local accounts, hybrid, or OIDC-primary SSO with role mapping from the identity provider</td></tr>
-              <tr><td>Agents</td><td>Register, monitor, and remove agents; align naming for preferred-agent targeting</td></tr>
-              <tr><td>API</td><td>Full REST surface for automation, CI, and integration</td></tr>
+              <tr><td>Agents</td><td>Register, monitor, and remove agents. Assign an agent pool to a workspace. A preferred agent still pins one job to one name</td></tr>
+              <tr><td>Definitions</td><td>Export jobs, workflows, and schedules. Review adds, updates, and removals, then apply only the confirmed lines. Run history is not in the file</td></tr>
+              <tr><td>API</td><td>The API catalog is for administrators. Operators and the agents call the API. Viewers do not</td></tr>
             </tbody>
           </table>
         </div>
@@ -311,7 +320,9 @@
               <tr><td>Health</td><td>Spring Actuator health, readiness, metrics, Prometheus endpoint</td></tr>
               <tr><td>Notifications</td><td>Optional email on failure (and optional success) via SMTP</td></tr>
               <tr><td>Artifacts</td><td>Configurable cache directory for GIT_RELEASE downloads on server or agent hosts</td></tr>
-              <tr><td>Observability</td><td>Dashboard counts, audit events, execution diagnostics for ops triage</td></tr>
+              <tr><td>Agent identity</td><td>Remote agents use a confidential client and a short-lived token over HTTPS. Private-network agents may use a local operator login</td></tr>
+              <tr><td>Agent host</td><td>On Linux the agent refuses to start as root. Packaged containers drop extra privileges and keep the root filesystem read-only</td></tr>
+              <tr><td>Observability</td><td>Dashboard counts, audit of field changes, and execution diagnostics for ops triage</td></tr>
             </tbody>
           </table>
         </div>
@@ -331,9 +342,12 @@
               <li><strong>Pull model</strong> — agents open outbound HTTPS to the control plane; the server does not need to dial agent hosts</li>
               <li><strong>Identity by name</strong> — register, heartbeat, and claim use a unique agent name</li>
               <li><strong>Hostname is a label</strong> — optional display metadata for operators; not used for routing</li>
-              <li><strong>Preferred agent</strong> on a job pins work to a named agent (the host that has your files)</li>
+              <li><strong>Agent pool</strong> — a workspace names a set of agents. Jobs with no preferred agent are taken by any online member of that pool</li>
+              <li><strong>Preferred agent</strong> on a job pins work to one named agent (the host that has your files)</li>
+              <li><strong>Remote sign-in</strong> — HTTPS and a short-lived token from the identity provider. HTTP Basic remains for agents on a private network</li>
+              <li><strong>Account</strong> — on Linux the agent refuses to start as root. The command has only that account’s rights</li>
               <li><strong>Linux &amp; Windows</strong> — same agent package; shell via <code>/bin/sh</code> or <code>cmd.exe</code></li>
-              <li><strong>Scale-out</strong> — run multiple agent processes for parallel capacity</li>
+              <li><strong>Load</strong> — the number shown is the work actually running on that agent</li>
             </ul>
             <p style="margin-top:0.85rem;color:var(--muted);font-size:0.9rem">
               Full detail: <a href="downloads/JustRunIt-Agents-Guide.pdf">Agents guide (PDF)</a>
@@ -386,10 +400,10 @@
           <h3>Why this matters for federation</h3>
           <ul>
             <li><strong>Control plane federation</strong> — multiple teams use one HA deployment instead of shadow schedulers</li>
-            <li><strong>Agent federation</strong> — agents remain on team-owned systems; preferred agent binds a job to the right host</li>
-            <li><strong>Least privilege of view</strong> — non-admins only see workspaces they belong to; admins retain full oversight</li>
+            <li><strong>Agent federation</strong> — agents remain on team-owned systems. A pool keeps that team’s jobs on those machines. A preferred agent binds one job to one host</li>
+            <li><strong>Least privilege of view</strong> — non-admins only see workspaces they belong to; admins retain full oversight. A viewer is read-only even as a workspace owner</li>
             <li><strong>Same-workspace integrity</strong> — workflow steps and schedules must reference jobs in the same workspace</li>
-            <li><strong>Enterprise SSO</strong> — hybrid or OIDC-primary modes (Entra ID, Okta, Keycloak); IdP groups map to platform roles; agents keep HTTP Basic service accounts</li>
+            <li><strong>Enterprise SSO</strong> — hybrid or SSO-only (Entra ID, Okta, Keycloak). IdP groups map to platform roles. Remote agents use a short-lived token over HTTPS. A local operator login remains for the private network, and a public entrance can refuse it</li>
             <li><strong>Isolation proof</strong> — same OPERATOR role can serve Finance and Platform teams without shared job catalogs</li>
           </ul>
           <p style="margin-top:0.85rem">
@@ -474,7 +488,7 @@
           <p class="demo-note" style="margin-top:0;margin-bottom:0.85rem">
             ~3 minute elaborate walkthrough: hybrid login, Keycloak SSO (same pattern as Entra ID / Okta),
             IdP groups → VIEWER / OPERATOR / ADMIN, Finance vs Platform team catalogs, admin groups &amp; users,
-            and agents on HTTP Basic (not browser OAuth).
+            and private-network agents on HTTP Basic. A remote agent can instead use a short-lived token over HTTPS.
           </p>
           <div class="demo-player">
             <video
@@ -555,7 +569,7 @@
           <div class="download-item">
             <div>
               <h3>Security overview (PDF)</h3>
-              <p>One-page brief: API-only agents, no agent-to-database path, RBAC/OIDC, production hardening checklist.</p>
+              <p>API-only agents, no agent-to-database path, RBAC, SSO, remote agent tokens, and a production hardening checklist.</p>
             </div>
             <a class="btn btn-secondary btn-sm" href="downloads/JustRunIt-Security-Overview.pdf" download>Download PDF</a>
           </div>
@@ -576,14 +590,14 @@
           <div class="download-item">
             <div>
               <h3>Product overview (PDF)</h3>
-              <p>Offering summary: features, roles, agents, workspaces, and deployment options.</p>
+              <p>Offering summary: jobs, agent pools, roles, definition review, and deployment options.</p>
             </div>
             <a class="btn btn-secondary btn-sm" href="downloads/JustRunIt-Product-Overview.pdf" download>Download PDF</a>
           </div>
           <div class="download-item">
             <div>
               <h3>Agents guide (PDF)</h3>
-              <p>Registration, name vs hostname, preferred agent, and federated placement.</p>
+              <p>Registration, name versus hostname, agent pools, preferred agent, and remote sign-in.</p>
             </div>
             <a class="btn btn-secondary btn-sm" href="downloads/JustRunIt-Agents-Guide.pdf" download>Download PDF</a>
           </div>
@@ -657,11 +671,11 @@
           </details>
           <details>
             <summary>Is it ready for production use?</summary>
-            <p>Yes. The product ships with the capabilities operators need day to day — real COMMAND jobs, workflows, cron schedules, federated agents, workspaces, RBAC, optional OIDC, execution triage, and production deployment options (Compose HA, Kubernetes/Helm, bare metal). Commercial licenses are available now.</p>
+            <p>Yes. The product ships with the capabilities operators need day to day — real COMMAND jobs, workflows, cron schedules, federated agents and agent pools, workspaces, RBAC, optional OIDC, definition export with review and apply, execution triage, and production deployment options (Compose HA, Kubernetes/Helm, bare metal). Commercial licenses are available now.</p>
           </details>
           <details>
             <summary>Can teams run jobs on their own servers?</summary>
-            <p>Yes. Install agents on team-owned systems and pin jobs with preferred agent names. Workspaces keep personal and group catalogs separate on one shared control plane.</p>
+            <p>Yes. Install agents on team-owned systems. Assign those agents to the workspace pool so any online member can take the next job, or pin one job to one agent name. Workspaces keep personal and group catalogs separate on one shared control plane.</p>
           </details>
           <details>
             <summary>How is it deployed in production?</summary>
@@ -698,10 +712,10 @@
           </figure>
           <figure class="shot">
             <a class="shot-frame" href="assets/images/full/01-login.png" data-full="assets/images/full/01-login.png">
-              <img src="assets/images/01-login.png" srcset="assets/images/full/01-login.png 1800w" width="1800" height="1125" alt="Just Run It sign-in page with local login" loading="lazy" decoding="async" />
+              <img src="assets/images/01-login.png" srcset="assets/images/full/01-login.png 1800w" width="1800" height="1125" alt="Just Run It sign-in with company SSO" loading="lazy" decoding="async" />
             </a>
             <figcaption>
-              <div class="cap-text"><strong>Sign-in</strong> Hybrid local + OIDC SSO; IdP groups map to platform roles.</div>
+              <div class="cap-text"><strong>Sign-in</strong> Company SSO. Identity-provider groups map to Admin, Operator, and Viewer.</div>
               <div class="shot-actions"><a class="btn btn-secondary btn-sm" href="assets/images/full/01-login.png" target="_blank" rel="noopener">Open full size</a></div>
             </figcaption>
           </figure>
