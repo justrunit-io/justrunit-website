@@ -535,7 +535,7 @@ async function main() {
   await showCard(page, {
     eyebrow: 'Next step',
     title: 'See it live · talk licensing',
-    body: 'justrunit.io · Security & architecture PDFs in Downloads · justrunit.io@gmail.com · 561-436-5776',
+    body: 'justrunit.io · Security & architecture PDFs in Downloads · justrunit.io@gmail.com · 561-523-2049',
     seconds: 4.0,
   });
 
