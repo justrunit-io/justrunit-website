@@ -5,7 +5,7 @@ Static marketing site for **Just Run It** (enterprise workload automation).
 | | |
 |--|--|
 | **Production domain** | **https://justrunit.io** |
-| **Contact** | justrunit.io@gmail.com · 318-232-2280 |
+| **Contact** | justrunit.io@gmail.com · 561-436-5776 |
 | **Host** | Cloudflare Pages (recommended) |
 
 ## Local preview
@@ -61,7 +61,7 @@ Then attach `justrunit.io` in the dashboard under that project’s **Custom doma
 - Canonical / Open Graph URLs point at `https://justrunit.io/`
 - `robots.txt` and `sitemap.xml` reference the production domain
 - Email: **justrunit.io@gmail.com**
-- Phone: **318-232-2280** — leave a message; we will call back to discuss needs
+- Phone: **561-436-5776** — leave a message; we will call back to discuss needs
 
 ## Public downloads
 
