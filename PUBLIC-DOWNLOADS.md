@@ -31,5 +31,5 @@ not internal gaps.
 - Continuous product investment is framed as a commercial benefit of licensing — not as unfinished work  
 
 - **Website:** https://justrunit.io  
-- **Email:** justrunit.io@gmail.com  
+- **Email:** Rob@Justrunit.io  
 - **Phone:** 561-523-2049 (leave a message; we will call back for production licensing)

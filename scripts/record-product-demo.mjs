@@ -412,7 +412,7 @@ async function main() {
   await showCard(page, {
     eyebrow: 'Just Run It',
     title: 'Define. Run. Schedule. Observe.',
-    body: 'Docker Compose or Kubernetes · justrunit.io · justrunit.io@gmail.com · 561-523-2049',
+    body: 'Docker Compose or Kubernetes · justrunit.io · Rob@Justrunit.io · 561-523-2049',
     seconds: 4.5,
   });
   await showCard(page, {

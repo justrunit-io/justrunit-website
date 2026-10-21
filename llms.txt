@@ -4,7 +4,7 @@
 
 - Site: https://justrunit.io/
 - Product demo: https://justrunit.io/#demo
-- License contact: justrunit.io@gmail.com
+- License contact: Rob@Justrunit.io
 - Phone: 561-523-2049 (leave a message; we will call back)
 - Product GitHub (platform): https://github.com/justrunit-io/automation-platform
 - Website source: https://github.com/justrunit-io/justrunit-website
